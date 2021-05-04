@@ -5,10 +5,9 @@
   "author": {
     "name": "Rob O'Leary"
   },
-  "description": "Perform file operations in a hop and a pick. 🐰⌨️",
-  "preview": true,
+  "description": "Perform file actions in a short hop. 🐰⌨️",
   "icon": "img/logo.png",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "engines": {
     "vscode": "^1.46.0",
     "node": ">=12"
@@ -17,7 +16,7 @@
     "Other"
   ],
   "galleryBanner": {
-    "color": "#ffff00",
+    "color": "#ffa900",
     "theme": "light"
   },
   "keywords": [
@@ -28,10 +27,13 @@
     "rename file",
     "duplicate file",
     "create file",
+    "open file",
+    "file manager",
+    "file explorer",
     "new file",
     "advanced new file",
     "delete file",
-    "file explorer",
+    "copy file name",
     "file browser"
   ],
   "bugs": {
@@ -49,9 +51,24 @@
   "contributes": {
     "commands": [
       {
+        "command": "filebunny.createFile",
+        "category": "File Bunny",
+        "title": "Create New File"
+      },
+      {
         "command": "filebunny.moveFile",
         "category": "File Bunny",
         "title": "Move Active File"
+      },
+      {
+        "command": "filebunny.duplicateFile",
+        "category": "File Bunny",
+        "title": "Duplicate Active File"
+      },
+      {
+        "command": "filebunny.renameFile",
+        "category": "File Bunny",
+        "title": "Rename Active File"
       },
       {
         "command": "filebunny.deleteFile",
@@ -62,23 +79,16 @@
         "command": "filebunny.openFolder",
         "category": "File Bunny",
         "title": "Open Folder"
-      }
-    ],
-    "keybindings": [
-      {
-        "key": "left",
-        "command": "filebunny.back",
-        "when": "inFileBunny"
       },
       {
-        "key": "right",
-        "command": "filebunny.next",
-        "when": "inFileBunny"
+        "command": "filebunny.goToTopActiveFile",
+        "category": "File Bunny",
+        "title": "Go to Top of Active File"
       },
       {
-        "key": "tab",
-        "command": "filebunny.next",
-        "when": "inFileBunny"
+        "command": "filebunny.goToBottomActiveFile",
+        "category": "File Bunny",
+        "title": "Go to Bottom of Active File"
       }
     ],
     "configuration": {
@@ -92,15 +102,9 @@
           },
           "default": [
             "**/.git/**",
-            "**/.m2/**",
-            "**/.gradle/**",
             "**/node_modules/**"
           ],
-          "description": "Glob patterns for excluding files and folders from file lists. Similar to native `files.exclude`. Patterns must match on absolute paths (i.e. prefix with **, or use the full path). \n\nDots are treated as normal characters (dot:true option for glob-node). If you want to exclude all dot folders, use the pattern: '**/.*/**'."
-        },
-        "filebunny.browserDefaultFolder": {
-          "type": "string",
-          "description": "The default location for the file browser for the 'Open Folder' command. If none is provided, the default is the user home directory."
+          "description": "Glob patterns for excluding files and folders from file lists. It is similar to `files.exclude`. Patterns must match on absolute paths (i.e. prefix with **, or use the full path). \n\nDots are treated as normal characters (dot:true option for glob-node). If you want to exclude all dot folders, use the pattern: '**/.*/**'."
         }
       }
     }
