@@ -5,9 +5,9 @@
   "author": {
     "name": "Rob O'Leary"
   },
-  "description": "Perform file actions in a short hop. 🐰⌨️",
+  "description": "Perform file actions quickly with keyboard-driven file selection. 🐰⌨️",
   "icon": "img/logo.png",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "engines": {
     "vscode": "^1.46.0",
     "node": ">=12"
@@ -81,6 +81,11 @@
         "title": "Open Folder"
       },
       {
+        "command": "filebunny.openWorkspaceFolderExternal",
+        "category": "File Bunny",
+        "title": "Open Workspace Folder Externally"
+      },
+      {
         "command": "filebunny.goToTopActiveFile",
         "category": "File Bunny",
         "title": "Go to Top of Active File"
@@ -89,6 +94,48 @@
         "command": "filebunny.goToBottomActiveFile",
         "category": "File Bunny",
         "title": "Go to Bottom of Active File"
+      },
+      {
+        "command": "filebunny.copyFileName",
+        "category": "File Bunny",
+        "title": "Copy File Name"
+      },
+      {
+        "command": "filebunny.copyRelativeFilePath",
+        "category": "File Bunny",
+        "title": "Copy Relative File Path"
+      },
+      {
+        "command": "filebunny.copyAbsoluteFilePath",
+        "category": "File Bunny",
+        "title": "Copy Absolute File Path"
+      }
+    ],
+    "keybindings": [
+      {
+        "key": "left",
+        "command": "filebunny.back",
+        "when": "inFileBunny"
+      },
+      {
+        "key": "right",
+        "command": "filebunny.next",
+        "when": "inFileBunny"
+      },
+      {
+        "key": "tab",
+        "command": "filebunny.next",
+        "when": "inFileBunny"
+      },
+      {
+        "key": "home",
+        "command": "filebunny.goToTopActiveFile",
+        "when": "!editorReadonly && editorFocus"
+      },
+      {
+        "key": "end",
+        "command": "filebunny.goToBottomActiveFile",
+        "when": "!editorReadonly && editorFocus"
       }
     ],
     "configuration": {
