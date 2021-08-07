@@ -5,7 +5,31 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.5.0] - 2021-07-04
+## [1.0.0] - 2021-07-03
+
+### Added
+
+- Added command *Duplicate file*.
+- Added command *Move file*.
+- Added command *Delete file*.
+- Added command *Open active file in External Default App* (Premium command).
+
+### Changed
+
+- Changed the workspace folder description from "This Folder" to "Workspace Root" for commands: *create new file*, *move active file*, *duplicate active file*, *create new folder*, *duplicate folder*.
+- Include the workspace root folder in the picker for the command *duplicate folder*.
+- Renamed the commands that operate on active files:
+	- Renamed `moveFile` to `moveActiveFile` for *move active file*.
+	- Renamed `duplicateFile` to `duplicateActiveFile` for *duplicate active file*.
+	- Renamed `deleteFile` to `deleteActiveFile` for *delete active file*.
+- Changed `galleryBanner` color in `package.json` to use lighter colour.
+
+### Fixed
+
+- Fixed file names listed in the picker for command *Open Folder* when you navigate to the root directory.
+- Fixed command *Open Folder* to retain focus when you click outside, now it is the same as the other commands.
+
+## [0.5.0] - 2021-07-03
 
 ### Added
 

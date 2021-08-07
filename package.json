@@ -7,7 +7,7 @@
   },
   "description": "Perform file actions quickly with keyboard-driven file selection. 🐰⌨️",
   "icon": "img/logo.png",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.46.0",
     "node": ">=12"
@@ -16,25 +16,60 @@
     "Other"
   ],
   "galleryBanner": {
-    "color": "#ffa900",
+    "color": "#ffcc67",
     "theme": "light"
   },
   "keywords": [
     "file",
+    "folder",
+    "directory",
+    "dir",
     "files",
     "file utils",
-    "move file",
-    "rename file",
-    "duplicate file",
-    "create file",
-    "open file",
+    "file utility",
+    "file utilities",
+    "file operations",
+    "file selector",
     "file manager",
     "file explorer",
+    "explorer",
+    "file browser",
+    "browser",
+    "create new",
     "new file",
     "advanced new file",
+    "create new file",
+    "create file",
+    "create new folder",
+    "create folder",
+    "create directory",
+    "move",
+    "move file",
+    "move folder",
+    "copy",
+    "copy file",
+    "copy folder",
+    "copy dir",
+    "rename",
+    "rename file",
+    "rename folder",
+    "rename dir",
+    "duplicate",
+    "duplicate file",
+    "duplicate folder",
+    "duplicate dir",
+    "delete",
     "delete file",
+    "delete folder",
+    "open",
+    "open file",
+    "open folder",
+    "quick open",
     "copy file name",
-    "file browser"
+    "copy file path",
+    "emacs",
+    "helm",
+    "emacs helm"
   ],
   "bugs": {
     "url": "https://github.com/robole/file-bunny/issues"
@@ -56,24 +91,39 @@
         "title": "Create New File"
       },
       {
-        "command": "filebunny.moveFile",
+        "command": "filebunny.moveActiveFile",
         "category": "File Bunny",
         "title": "Move Active File"
       },
       {
-        "command": "filebunny.duplicateFile",
+        "command": "filebunny.duplicateActiveFile",
         "category": "File Bunny",
         "title": "Duplicate Active File"
       },
       {
-        "command": "filebunny.renameFile",
+        "command": "filebunny.renameActiveFile",
         "category": "File Bunny",
         "title": "Rename Active File"
       },
       {
-        "command": "filebunny.deleteFile",
+        "command": "filebunny.deleteActiveFile",
         "category": "File Bunny",
         "title": "Delete Active File"
+      },
+      {
+        "command": "filebunny.duplicateFile",
+        "category": "File Bunny",
+        "title": "Duplicate File"
+      },
+      {
+        "command": "filebunny.moveFile",
+        "category": "File Bunny",
+        "title": "Move File"
+      },
+      {
+        "command": "filebunny.deleteFile",
+        "category": "File Bunny",
+        "title": "Delete File"
       },
       {
         "command": "filebunny.openFolder",
@@ -83,7 +133,7 @@
       {
         "command": "filebunny.openWorkspaceFolderExternal",
         "category": "File Bunny",
-        "title": "Open Workspace Folder Externally"
+        "title": "Open Workspace Folder in External Default App"
       },
       {
         "command": "filebunny.goToTopActiveFile",
