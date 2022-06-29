@@ -92,7 +92,7 @@ The following commands can be run from the Command Palette (`Ctrl+Shift+P`). The
 1. `File Bunny: Duplicate File`: Choose a file to duplicate to another location in the current workspace.
 1. `File Bunny: Delete File`: Choose a file to delete from the current workspace. The file is put into the trash (recycle bin).
 
-### File actions on active
+### File actions on active file
 
 1. `File Bunny: Open Active File in External Default App`: Open the active file in the system default app.
 1. `File Bunny: Move Active File`: Move the active file to another location in the current workspace.
@@ -154,7 +154,7 @@ The extension is loaded once VS Code has fully loaded. To be more specific, it i
 
 If you have a suggestion or find a bug, please file an issue.
 
-My time is limited, so adding features is unlikely. I use this extension, so I know it works and look to impove it when I have the opportunity!
+My time is limited, so adding features is unlikely. I use this extension, so it works, for sure!
 
 **If you want to support me to dedicate more time to this or other projets, you can [become a supporter](https://ko-fi.com/roboleary).**
 
