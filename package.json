@@ -7,7 +7,7 @@
   },
   "description": "Perform file actions quickly with keyboard-driven file selection. 🐰⌨️",
   "icon": "img/logo.png",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "engines": {
     "vscode": "^1.46.0",
     "node": ">=12"
@@ -68,8 +68,7 @@
     "copy file name",
     "copy file path",
     "emacs",
-    "helm",
-    "emacs helm"
+    "helm"
   ],
   "bugs": {
     "url": "https://github.com/robole/vscode-file-bunny/issues"
