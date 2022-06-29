@@ -12,7 +12,7 @@
     {
       "label": "Run webpack on startup",
       "type": "shell",
-      "command": "npm run dev",
+      "command": "export NODE_OPTIONS=--openssl-legacy-provider;npm run dev",
       "presentation": {
         "reveal": "always",
         "panel": "new"
