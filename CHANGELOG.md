@@ -5,6 +5,27 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2022-06-29
+
+### Added
+
+- Added configuration option `filebunny.initialDirectoryOpenFolder` to specify the initial directory for command `File Bunny: Open Folder`.
+- Added GitHub Action to publish to VS Code Marketplace and Open VSX to *./.github*.
+- Added *.gitattributes* to ensure that tests work on Windows and Linux
+
+### Changed
+
+- Renamed npm script `webpack:dev` to `dev`.
+- Updated *vsce* to latest version. Updated the script `build` to `npx vsce package .` (adding `npx`) in *packge.json*.
+- Categorised commands in *README.md*.
+- Changed *.eslintrc.json* to extend *eslint-config-node-roboleary* config.
+- Published source code.
+
+### Removed
+
+- Removed "Custom keybindings" section from *README.md*.
+- Removed mentions of "premium edition" from *README.md*.
+
 ## [1.0.0] - 2021-07-03
 
 ### Added

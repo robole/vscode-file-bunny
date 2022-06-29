@@ -71,47 +71,59 @@ If you perform a file action such as moving a file, overwriting another file is 
 
 There are times when you want to do something with a workspace file outside of VS Code.
 
-You may want to perform some action on a group of files, so it's probably easier to open that folder in your system file manager and do it there. You can use the `File Bunny: Open Workspace Folder Externally` command, or the `File Bunny: Open Folder Externally` command (only available in the <a href="https://ko-fi.com/s/17e88aa21f">premium version</a></strong>) to open a specific folder.
+You may want to perform some action on a group of files, so it's probably easier to open that folder in your system file manager and do it there. You can use the `File Bunny: Open Workspace Folder Externally` command, or the `File Bunny: Open Folder Externally` command to open a specific folder.
 
-You may want to edit a file in an app specific to that file type. I often want to edit SVG images in my default editor (Inkscape). You can use the `File Bunny: Open File in External App` command (only availble in the <a href="https://ko-fi.com/s/17e88aa21f">premium version</a></strong>) to do this.
+You may want to edit a file in an app specific to that file type. I often want to edit SVG images in my default editor (Inkscape). You can use the `File Bunny: Open File in External App` command to do this.
 
 ## Commands
 
-The following commands can be run from the Command Palette (`Ctrl+Shift+P`):
+The following commands can be run from the Command Palette (`Ctrl+Shift+P`). They are categorised below:
 
-1. `File Bunny: Create New File`: Create a new file in the current workspace.
-1. `File Bunny: Move Active File`: Move the active file to another location in the current workspace.
-1. `File Bunny: Move File`: Choose a file to move to another location in the current workspace. ![New command](/img/new.png)
-1. `File Bunny: Duplicate Active File`: Copy the active file and place it somewhere in the current workspace.
-1. `File Bunny: Duplicate File`: Choose a file to duplicate to another location in the current workspace. ![New command](/img/new.png)
-1. `File Bunny: Rename Active File`
-1. `File Bunny: Delete Active File`: Delete the active file. The file is put into the trash (recycle bin).
-1. `File Bunny: Delete File`: Choose a file to delete from the current workspace. The file is put into the trash (recycle bin). ![New command](/img/new.png)
-1. `File Bunny: Open Folder`: Choose a folder to open as the workspace.
-1. `File Bunny: Open Workspace Folder in External Default App`: Open the current workspace folder in the Operating Systems' file explorer.
-1. `File Bunny: Go to Top of Active File`: The `Home` key is bound to this command also.
-1. `File Bunny: Go to End of Active File`: The `End` key is bound to this command also.
-1. `File Bunny: Copy File Name`: Copy the file name of the active file to the clipboard.
-1. `File Bunny: Copy Relative Path`: Copy the relative file path of the active file to the clipboard.
-1. `File Bunny: Copy Absolute Path`: Copy the absolute file path of the active file to the clipboard.
-
-You can purchase the <strong><a href="https://ko-fi.com/s/17e88aa21f">premium version</a></strong> from my store. It is also available to my supporters. It has the following additional commands:
+### File actions
 
 1. `File Bunny: Open File`: Choose a file to open from the current workspace.
-1. `File Bunny: Open Active File in External Default App`: Open the active file in the system default app. ![New command](/img/new.png)
 1. `File Bunny: Open File to the Right`: Choose a file to open from the current workspace, and split it to the right of the active editor.
 1. `File Bunny: Open File to the Left`: Choose a file to open from the current workspace, and split it to the left of the active editor.
 1. `File Bunny: Open File Above`: Choose a file to open from the current workspace, and split it above the active editor.
 1. `File Bunny: Open File Below`: Choose a file to open from the current workspace, and split it below the active editor.
 1. `File Bunny: Open File in External Default App`: Choose a file to open from the current workspace in the system default app.
+1. `File Bunny: Create New File`: Create a new file in the current workspace.
+1. `File Bunny: Move File`: Choose a file to move to another location in the current workspace.
+1. `File Bunny: Duplicate File`: Choose a file to duplicate to another location in the current workspace.
+1. `File Bunny: Delete File`: Choose a file to delete from the current workspace. The file is put into the trash (recycle bin).
+
+### File actions on active
+
+1. `File Bunny: Open Active File in External Default App`: Open the active file in the system default app.
+1. `File Bunny: Move Active File`: Move the active file to another location in the current workspace.
+1. `File Bunny: Duplicate Active File`: Copy the active file and place it somewhere in the current workspace.
+1. `File Bunny: Rename Active File`
+1. `File Bunny: Delete Active File`: Delete the active file. The file is put into the trash (recycle bin).
+
+### Folder actions
+
+1. `File Bunny: Open Folder`: Choose a folder to open as the workspace.
+1. `File Bunny: Open Workspace Folder in External Default App`: Open the current workspace folder in the Operating Systems' file explorer.
 1. `File Bunny: Open Folder in External Default App`: Open a folder from the current workspace in the Operating Systems' file explorer.
 1. `File Bunny: Create New Folder`: Create a new folder in the current workspace.
 1. `File Bunny: Duplicate Folder`: Duplicate a folder from the current workspace, and place it somewhere in the current workspace.
 1. `File Bunny: Delete Folder`: Delete a folder from the current workspace.
 
+### Quick navigation
+
+1. `File Bunny: Go to Top of Active File`: The `Home` key is bound to this command also.
+1. `File Bunny: Go to End of Active File`: The `End` key is bound to this command also.
+
+### Quick metadata
+
+1. `File Bunny: Copy File Name`: Copy the file name of the active file to the clipboard.
+1. `File Bunny: Copy Relative Path`: Copy the relative file path of the active file to the clipboard.
+1. `File Bunny: Copy Absolute Path`: Copy the absolute file path of the active file to the clipboard.
+
 ## Settings
 
 - `Filebunny: Excludes`: Configure glob patterns for excluding files and folders from file lists for commands. By default, the *.git* and *node_modules* folders are ignored in your workspace.
+- `Filebunny: Starting Location Open Folder`: The initial location shown in the QuickPick when you run the command `File Bunny: Open Folder`. If this field is empty or the path is invalid, it will default to the system home directory.  ![New command](/img/new.png)
 
 ## Keybindings
 
@@ -124,7 +136,9 @@ For multi-step commands such as `File Bunny: Create New File`, there are keybind
 | `Home` | `filebunny.goToTopActiveFile` | Go to the first line of the active file | `!editorReadonly && editorFocus` |
 | `End` | `filebunny.goToBottomActiveFile` | Go to the last line of the active file | `!editorReadonly && editorFocus` |
 
-If you want to change this keybindings, you can read the section [Custom keybindings](#custom-keybindings).
+If you want to modify these keybindings, you can read the [Key Bindings for Visual Studio Code guide](https://code.visualstudio.com/docs/getstarted/keybindings) to learn how.
+
+You can also check out my article, [VS Code keyboard-fu: custom keyboard shortcuts that will boost your productivity](https://www.roboleary.net/2022/02/28/vscode-keyboard-fu-custom-keyboard-shortcuts.html) where I discuss what keybindings I modify.
 
 ## Activation
 
@@ -136,81 +150,21 @@ The extension is loaded once VS Code has fully loaded. To be more specific, it i
 1. Inside VS Code: Type `Ctrl+P`, write `ext install robole.file-bunny` in the text field, and hit `Enter`.
 1. From the Command-line: Run the command `code --install-extension robole.file-bunny`.
 
-## Custom keybindings
-
-You may want to edit one of File Bunnys' predefined keybindings or add a keybinding for one of File Bunnys' commands. You can read the [Key Bindings for Visual Studio Code guide](https://code.visualstudio.com/docs/getstarted/keybindings) to learn more about keybindings, but I will give you an abbreviated version related to this extension.
-
-To edit your keybindings, you can open the `keybindings.json` file with the command `Preferences: Open Keyboard Shortcuts (JSON)`. If there is a keybinding already defined for a key combination you want to use, you may need to disable it if they target the same context. You can check the existing keybindings by opening *Keyboard Shortcuts* with the command `Preferences: Open Keyboard Shortcuts`.
-
-To change a predefined keybinding to an unallocated key combination, just add a new keybinding. For example, say you want to change `filebunny.back` to `Ctrl` + `Shift` + `Backspace`. You can add the following to `keybindings.json`:
-
-```json
-  {
-    "key": "Ctrl+Shift+Backspace",
-    "command": "filebunny.back",
-    "when": "inFileBunny"
-  }
-```
-
-We include the [when clause](https://code.visualstudio.com/api/references/when-clause-contexts) of `inFileBunny` to ensure that this keybinding only applies to multi-step commands in File Bunny.
-
-I like to add a keybinding for `File Bunny: Open File` command. I prefer to use it instead of the default `Go to File...` command that is triggered by `Ctrl` + `P`. Since this key combination is allocated already, we must disable it. You can do this by adding the following to your `keybindings.json`:
-
-```json
- {
-    "key": "ctrl+p",
-    "command": "-workbench.action.quickOpen"
- },
- {
-    "key": "ctrl+p",
-    "command": "filebunny.openFile"
- }
-```
-
-The first keybinding entry disables the existing keybinding, you notice that the command is prepended with a hyphen to denote this. You can disable keybindings yourself in *Keyboard Shortcuts* by right-clicking on the keybinding and selecting "Remove keybinding", as per screenshot below. That adds the entry to `keybindings.json` for you.
-
-![removed default keybinding](img/go-to-file-keybinding.png)
-
-If you would like to add a keybinding for any other command, you can use the following names in the `command` property:
-
-| Title  | Name   |
-|-------------- | -------------- |
-| `File Bunny: Create New File`   | `filebunny.createFile`    |
-| `File Bunny: Move Active File` | `filebunny.moveActiveFile` |
-| `File Bunny: Move File` | `filebunny.moveFile` |
-| `File Bunny: Duplicate Active File` | `filebunny.duplicateActiveFile` |
-| `File Bunny: Duplicate File` | `filebunny.duplicateFile` |
-| `File Bunny: Rename Active File` | `filebunny.renameActiveFile` |
-| `File Bunny: Delete Active File`| `filebunny.deleteActiveFile` |
-| `File Bunny: Delete File`| `filebunny.deleteFile` |
-| `File Bunny: Go to Top of Active File` | `filebunny.goToTopActiveFile` |
-| `File Bunny: Go to End of Active File` | `filebunny.goToBottomActiveFile` |
-| `File Bunny: Copy File Name` | `filebunny.copyFileName` |
-| `File Bunny: Copy Relative Path` | `filebunny.copyRelativeFilePath` |
-| `File Bunny: Copy Absolute Path` | `filebunny.copyAbsoluteFilePath` |
-| `File Bunny: Open File` | `filebunny.openFile` |
-| `File Bunny: Open Active File in External App` | `filebunny.openActiveFileExternal` |
-| `File Bunny: Open File in External App` | `filebunny.openFileExternal`|
-| `File Bunny: Open File to the Right` | `filebunny.openFileToRight` |
-| `File Bunny: Open File to the Left` | `filebunny.openFileToleft` |
-| `File Bunny: Open File Above` | `filebunny.openFileAbove` |
-| `File Bunny: Open File Below` | `filebunny.openFileBelow` |
-| `File Bunny: Open Folder` | `filebunny.openFolder` |
-| `File Bunny: Open Workspace Folder Externally` | `filebunny.openWorkspaceFolderExternal` |
-| `File Bunny: Open Folder Externally` | `filebunny.openFolderExternal` |
-| `File Bunny: Create New Folder` | `filebunny.createFolder` |
-| `File Bunny: Duplicate Folder` | `filebunny.duplicateFolder` |
-| `File Bunny: Delete Folder` | `filebunny.deleteFolder`  |
-
 ## Contribute
 
 If you have a suggestion or find a bug, please file an issue.
 
-## Show gratitude
+My time is limited, so adding features is unlikely. I use this extension, so I know it works and look to impove it when I have the opportunity!
+
+**If you want to support me to dedicate more time to this or other projets, you can [become a supporter](https://ko-fi.com/roboleary).**
+
+If you want to contribute to the development, please discuss it with me first! I do not know if I would have time to perform a code review.
+
+## Gratitude
 
 If you are happy with the extension, please star the repo, and leave a review to help others find it. 🌟
 
-You can [buy me a coffee](https://ko-fi.com/roboleary) if you would like to support me in to maintain this extension, and have the time to make more great open-source software. ☕🙏
+You can [buy me a coffee or become a supporter](https://ko-fi.com/roboleary).
 
 ## Frequently Asked Questions (FAQ)
 
@@ -230,6 +184,6 @@ These are hidden system folders such as the recycle bin. You don't see these in 
 
 ![View of C: in File Explorer](img/windows-c-drive-system-folders-explorer.png)
 
-The reason this extension shows them is because it uses [node glob](https://www.npmjs.com/package/glob) under the hood, and glob dutifully reports these back as folders. If you open them, you can't do anything with them because of permissions. 
+The reason this extension shows them is because it uses [node glob](https://www.npmjs.com/package/glob) under the hood, and glob dutifully reports these back as folders. If you open them, you can't do anything with them because of permissions.
 
 This is not something I can turn off, it is just a quirk with Windows and glob. If it bothers you, add the specific folders to the `Filebunny: Excludes` setting, so that you won't see them in future.
