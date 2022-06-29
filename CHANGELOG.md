@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2022-06-29
+
+### Changed
+
+- Changed repo from *<https://github.com/robole/file-bunny>* to *<https://github.com/robole/vscode-file-bunny>*.
+
 ## [1.1.2] - 2022-06-29
 
 ### Fixed

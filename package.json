@@ -7,7 +7,7 @@
   },
   "description": "Perform file actions quickly with keyboard-driven file selection. 🐰⌨️",
   "icon": "img/logo.png",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "engines": {
     "vscode": "^1.46.0",
     "node": ">=12"
@@ -72,11 +72,11 @@
     "emacs helm"
   ],
   "bugs": {
-    "url": "https://github.com/robole/file-bunny/issues"
+    "url": "https://github.com/robole/vscode-file-bunny/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/robole/file-bunny"
+    "url": "https://github.com/robole/vscode-file-bunny"
   },
   "sponsor": {
     "url": "https://ko-fi.com/roboleary"
@@ -283,7 +283,7 @@
     "test": "node ./test/runTest.js",
     "dev": "webpack --mode development --watch",
     "vscode:prepublish": "webpack --mode production",
-    "build": "npx vsce package"
+    "build": "vsce package"
   },
   "devDependencies": {
     "@types/glob": "^7.1.3",
