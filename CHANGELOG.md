@@ -5,6 +5,10 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2022-07-15
+
+- Added FAQ #4 to README.md.
+
 ## [1.2.2] - 2022-06-29
 
 - Update GitHub Action should use latest major version (v1).

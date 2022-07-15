@@ -154,17 +154,13 @@ The extension is loaded once VS Code has fully loaded. To be more specific, it i
 
 If you have a suggestion or find a bug, please file an issue.
 
-My time is limited, so adding features is unlikely. I use this extension, so it works, for sure!
-
-**If you want to support me to dedicate more time to this or other projets, you can [become a supporter](https://ko-fi.com/roboleary).**
-
-If you want to contribute to the development, please discuss it with me first! I do not know if I would have time to perform a code review.
+If you want to contribute to the development, please discuss it with me first! I do not know when I would have time to perform a code review!
 
 ## Gratitude
 
-If you are happy with the extension, please star the repo, and leave a review to help others find it. 🌟
+You can [buy me a coffee or become a supporter](https://ko-fi.com/roboleary) to support my work.
 
-You can [buy me a coffee or become a supporter](https://ko-fi.com/roboleary).
+If you are happy with the extension, please star the repo, and leave a review to help others find it. 🌟
 
 ## Frequently Asked Questions (FAQ)
 
@@ -187,3 +183,11 @@ These are hidden system folders such as the recycle bin. You don't see these in 
 The reason this extension shows them is because it uses [node glob](https://www.npmjs.com/package/glob) under the hood, and glob dutifully reports these back as folders. If you open them, you can't do anything with them because of permissions.
 
 This is not something I can turn off, it is just a quirk with Windows and glob. If it bothers you, add the specific folders to the `Filebunny: Excludes` setting, so that you won't see them in future.
+
+### 4) Can you use the language file icons in the Quickpick instead of the generic file or folder icon?
+
+Currently, it is only possible to use [product icons](https://code.visualstudio.com/api/references/icons-in-labels) in the label of a [QuickPickItem](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem).
+
+Product icons are the built-in icons that are used throughout the editor. The product icons that ship with VS Code are contained in the [Codicon icon font](https://github.com/microsoft/vscode-codicons) and form the default product icon theme. I use the *file*, *symbolic link*, and *folder* icons from this font in the labels.
+
+There is an [open issue for adding support for file icons to the QuickPick API](https://github.com/microsoft/vscode/issues/59826). File icons are used next to file names in the UI, and are defined in a [file icon theme](https://code.visualstudio.com/api/extension-guides/file-icon-theme).
