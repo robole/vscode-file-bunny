@@ -5,19 +5,23 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1] - 2022-07-15
+
+- Fix outstanding linting errors.
+
 ## [1.3.0] - 2022-07-15
 
 - Added FAQ #4 to README.md.
 
 ## [1.2.2] - 2022-06-29
 
-- Update GitHub Action should use latest major version (v1).
+- Update GitHub Action to use latest major version (v1).
 
 ## [1.2.1] - 2022-06-29
 
 ### Fixed
 
-- Manually uplaoded to VS Code marketplace to see if "Sponsor" button appears.
+- Manually uploaded to VS Code marketplace to see if "Sponsor" button appears.
 
 ## [1.2.0] - 2022-06-29
 

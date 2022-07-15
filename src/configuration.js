@@ -15,9 +15,7 @@ function getAbsoluteExcludes(root) {
   let excludes = config.get("excludes");
 
   let escapedRoot = util.escapePath(root);
-  let absoluteExcludes = excludes.map((item) => {
-    return `${escapedRoot}/${item}`;
-  });
+  let absoluteExcludes = excludes.map((item) => `${escapedRoot}/${item}`);
   return absoluteExcludes;
 }
 

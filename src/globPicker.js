@@ -33,22 +33,20 @@ async function getFilesAsPickerItems(filepath, options) {
     let fileType;
     let stat;
 
-    try{
+    try {
       stat = await fs.stat(file);
-    }
-    catch(err){
+    } catch (err) {
       // dont want to print, if file is locked is common exception on windows
     }
-    
+
     if (stat && stat.isSymbolicLink()) {
       // no way to tell if link points to folder/file
       fileType = FileType.SymbolicLinkFolder;
     } else if (stat && stat.isDirectory()) {
       fileType = FileType.Folder;
-    } else if(stat){
+    } else if (stat) {
       fileType = FileType.File;
-    }
-    else{
+    } else {
       // this is usaully a case where a file is locked
       fileType = FileType.Folder;
     }
@@ -189,32 +187,33 @@ function setGlobOptionsDefaults(options) {
 function createGlobOptions(filepath, options) {
   let defaultOptions = setGlobOptionsDefaults(options);
   let globOptions = defaultOptions;
+  let path = filepath;
 
-  if(process.platform === 'win32' && util.isRootFolder(filepath)){
-    filepath = ""; // node glob will not recognise C:
+  if (process.platform === "win32" && util.isRootFolder(filepath)) {
+    path = ""; // node glob will not recognise C:
   }
 
   if (
     defaultOptions.showFiles === true &&
     defaultOptions.showFolders === false
   ) {
-    globOptions.pattern = `${filepath}/*`;
+    globOptions.pattern = `${path}/*`;
     globOptions.mark = true;
-    globOptions.excludes.push(`${filepath}/*/`);
+    globOptions.excludes.push(`${path}/*/`);
   } else if (
     defaultOptions.showFiles === false &&
     defaultOptions.showFolders === true
   ) {
-    globOptions.pattern = `${filepath}{/,/*/}`;
+    globOptions.pattern = `${path}{/,/*/}`;
   } else if (
     defaultOptions.showFiles === true &&
     defaultOptions.showFolders === true
   ) {
-    globOptions.pattern = `${filepath}{/,/*}`;
+    globOptions.pattern = `${path}{/,/*}`;
   }
 
   if (defaultOptions.includeTopFolder === false) {
-    globOptions.excludes.push(`${filepath}/`);
+    globOptions.excludes.push(`${path}/`);
   }
 
   return globOptions;

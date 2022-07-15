@@ -63,7 +63,7 @@ function activate(context) {
 
   let disposable9 = vscode.commands.registerCommand(
     "filebunny.openFolder",
-    async function () {
+    async () => {
       await folderAction.openFolder();
     }
   );

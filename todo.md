@@ -2,6 +2,7 @@
 
 ## Tasks
 
+1. Have a git files (`git ls-files`) version of `File Bunny: Open File`. See branch *open-gitfiles*.
 1. Add recent items to top of file list for `File Bunny: Open Folder`.
 1. Add more tests (refactor).
 1. `File Bunny: New Project from Template`
@@ -14,7 +15,7 @@
 
 ## Further ideas
 
-1. Use different fuzzy search algo.
+1. Use different fuzzy search algo?
 1. broot-like commands available on files. Could use `Terminal.sendText`? See <https://code.visualstudio.com/api/references/vscode-api#Terminal>
 1. Navigate to your home folder by typing ~ into the search box, or step up to the parent folder by typing ..
 1. Quickly toggle excluded files?

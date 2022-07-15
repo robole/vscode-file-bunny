@@ -254,7 +254,7 @@ async function deleteActiveFile() {
 }
 
 async function duplicateFile() {
-  if (util.isWorkspaceOpen() == false) {
+  if (util.isWorkspaceOpen() === false) {
     return;
   }
 
@@ -263,7 +263,7 @@ async function duplicateFile() {
 }
 
 async function moveFile() {
-  if (util.isWorkspaceOpen() == false) {
+  if (util.isWorkspaceOpen() === false) {
     return;
   }
 
@@ -272,7 +272,7 @@ async function moveFile() {
 }
 
 async function deleteFile() {
-  if (util.isWorkspaceOpen() == false) {
+  if (util.isWorkspaceOpen() === false) {
     return;
   }
 

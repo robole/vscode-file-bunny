@@ -42,7 +42,7 @@ class DuplicateFilePicker extends MultiStepPicker {
   }
 
   async run() {
-    if (util.isWorkspaceOpen() == false) {
+    if (util.isWorkspaceOpen() === false) {
       return;
     }
 
@@ -78,7 +78,6 @@ class DuplicateFilePicker extends MultiStepPicker {
   }
 
   async onDidAccept() {
-    let currentValue = this.picker.value;
     let pickedItems = this.picker.selectedItems;
 
     if (this.currentStepNum === 1) {
@@ -94,7 +93,7 @@ class DuplicateFilePicker extends MultiStepPicker {
       this.steps[1].value = selection;
 
       this.steps[2].title = `Duplicate '${this.steps[0].value}' to '${this.steps[1].value}'`;
-      this.steps[2].value = nodePath.basename(this.steps[0].value); //only want filename from step 1
+      this.steps[2].value = nodePath.basename(this.steps[0].value); // only want filename from step 1
 
       this.goForward();
     } else if (this.currentStepNum === 3) {

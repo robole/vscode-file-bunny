@@ -24,7 +24,7 @@ async function openFolder() {
   });
   browser.show();
 
-  browser.on("picked", async function () {
+  browser.on("picked", async () => {
     let { selection } = browser;
 
     if (selection !== null) {
