@@ -7,9 +7,12 @@ const NewFilePicker = require("./newFilePicker");
 const DuplicateFilePicker = require("./duplicateFilePicker");
 const MoveFilePicker = require("./moveFilePicker");
 const DuplicateActiveFilePicker = require("./duplicateActiveFilePicker");
+const FileItem = require("./fileItem");
+const FileType = require("./fileType");
 const globPicker = require("./globPicker");
 const fileSystem = require("./fileSystem");
 const util = require("./util");
+const shell = require("./shell");
 
 async function createFile() {
   if (util.isWorkspaceOpen() === false) {
@@ -29,6 +32,38 @@ async function openFile() {
 
   if (selectedFile !== undefined) {
     await vscode.commands.executeCommand("vscode.open", selectedFile);
+  }
+}
+
+async function openGitFile() {
+  if (util.isWorkspaceOpen() === false) {
+    return;
+  }
+
+  let workspaceFolderPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
+  let result = await shell.exec(`cd ${workspaceFolderPath}; git ls-files;`);
+
+  let files = result.split("\n");
+  files.shift(); // last element is empty, so remove!
+
+  let pickerItems = files.map((file) => {
+    let path = nodePath.resolve(workspaceFolderPath, file);
+    let fileType = FileType.File;
+
+    let item = new FileItem(file, path, fileType);
+    return item;
+  });
+
+  let selectedFile = await vscode.window.showQuickPick(pickerItems, {
+    ignoreFocusOut: true,
+    placeHolder: `Open file`,
+  });
+
+  if (selectedFile !== undefined) {
+    let selectedFileUri = vscode.Uri.file(
+      nodePath.join(workspaceFolderPath, selectedFile.name)
+    );
+    await vscode.commands.executeCommand("vscode.open", selectedFileUri);
   }
 }
 
@@ -254,7 +289,7 @@ async function deleteActiveFile() {
 }
 
 async function duplicateFile() {
-  if (util.isWorkspaceOpen() == false) {
+  if (util.isWorkspaceOpen() === false) {
     return;
   }
 
@@ -263,7 +298,7 @@ async function duplicateFile() {
 }
 
 async function moveFile() {
-  if (util.isWorkspaceOpen() == false) {
+  if (util.isWorkspaceOpen() === false) {
     return;
   }
 
@@ -272,7 +307,7 @@ async function moveFile() {
 }
 
 async function deleteFile() {
-  if (util.isWorkspaceOpen() == false) {
+  if (util.isWorkspaceOpen() === false) {
     return;
   }
 
@@ -393,4 +428,5 @@ module.exports = {
   copyAbsoluteFilePath,
   goToTopActiveFile,
   goToBottomActiveFile,
+  openGitFile,
 };

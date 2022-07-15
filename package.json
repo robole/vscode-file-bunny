@@ -7,7 +7,7 @@
   },
   "description": "Perform file actions quickly with keyboard-driven file selection. 🐰⌨️",
   "icon": "img/logo.png",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "engines": {
     "vscode": "^1.46.0",
     "node": ">=12"
@@ -218,9 +218,9 @@
         "title": "Open Folder in External Default App"
       },
       {
-        "command": "filebunny.test",
+        "command": "filebunny.openGitFile",
         "category": "File Bunny",
-        "title": "Test new functionality"
+        "title": "Open Git File"
       }
     ],
     "keybindings": [

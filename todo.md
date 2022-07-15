@@ -2,6 +2,7 @@
 
 ## Tasks
 
+1. Have a git files (`git ls-files`) version of `File Bunny: Open File`
 1. Add recent items to top of file list for `File Bunny: Open Folder`.
 1. Add more tests (refactor).
 1. `File Bunny: New Project from Template`

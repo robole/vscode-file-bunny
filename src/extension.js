@@ -63,7 +63,7 @@ function activate(context) {
 
   let disposable9 = vscode.commands.registerCommand(
     "filebunny.openFolder",
-    async function () {
+    async () => {
       await folderAction.openFolder();
     }
   );
@@ -195,6 +195,13 @@ function activate(context) {
     }
   );
 
+  let disposable28 = vscode.commands.registerCommand(
+    "filebunny.openGitFile",
+    async () => {
+      await fileAction.openGitFile();
+    }
+  );
+
   context.subscriptions = [
     disposable1,
     disposable2,
@@ -223,6 +230,7 @@ function activate(context) {
     disposable25,
     disposable26,
     disposable27,
+    disposable28,
   ];
 }
 
