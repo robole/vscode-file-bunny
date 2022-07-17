@@ -2,8 +2,9 @@
 
 ## Tasks
 
-1. Have a git files (`git ls-files`) version of `File Bunny: Open File`. Explore if child process is still running, and kill. https://dustinpfister.github.io/2018/02/05/nodejs-child-process-kill/
+1. Have a git files (`git ls-files`) version of `File Bunny: Open File`. Work on branch *open-gitfiles*.
 1. Add recent items to top of file list for `File Bunny: Open Folder`.
+1. Add quick option to `File Bunny: Open File` to open as vertical or horiztonal split.
 1. Add more tests (refactor).
 1. `File Bunny: New Project from Template`
 1. Add multi-root workspace support?
@@ -15,14 +16,11 @@
 
 ## Further ideas
 
-1. Use different fuzzy search algo.
+1. Use different fuzzy search algo with regex support?
 1. broot-like commands available on files. Could use `Terminal.sendText`? See <https://code.visualstudio.com/api/references/vscode-api#Terminal>
 1. Navigate to your home folder by typing ~ into the search box, or step up to the parent folder by typing ..
-1. Quickly toggle excluded files?
 1. Peek files like <https://github.com/abierbaum/vscode-file-peek>
 1. Batch actions required?
-1. Allow automatic creation of a folder?
-1. Use brace expansion <https://www.npmjs.com/package/brace-expansion> ?
 1. `File Bunny: Copy Active File as Base64`
 
 ## Performance

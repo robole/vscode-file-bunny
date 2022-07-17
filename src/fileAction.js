@@ -44,7 +44,7 @@ async function openGitFile() {
   let result = await shell.exec(`cd ${workspaceFolderPath}; git ls-files;`);
 
   let files = result.split("\n");
-  files.shift(); // last element is empty, so remove!
+  files.pop(); // last element is empty, so remove!
 
   let pickerItems = files.map((file) => {
     let path = nodePath.resolve(workspaceFolderPath, file);
