@@ -111,8 +111,8 @@ The following commands can be run from the Command Palette (`Ctrl+Shift+P`). The
 
 ### Quick navigation
 
-1. `File Bunny: Go to Top of Active File`: The `Home` key is bound to this command also.
-1. `File Bunny: Go to End of Active File`: The `End` key is bound to this command also.
+1. `File Bunny: Go to Top of Active File`
+1. `File Bunny: Go to End of Active File`
 
 ### Quick metadata
 
