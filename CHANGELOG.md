@@ -5,15 +5,27 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.2] - 2022-11-03
+
+### Fixed
+
+- Removed keybindings for *Home* and *End*. These keys already have existing keybindings that may confuse users. See [issue #5](https://github.com/robole/vscode-file-bunny/issues/5) for details.
+
 ## [1.3.1] - 2022-07-15
+
+### Fixed
 
 - Fix outstanding linting errors.
 
 ## [1.3.0] - 2022-07-15
 
+### Added
+
 - Added FAQ #4 to README.md.
 
 ## [1.2.2] - 2022-06-29
+
+### Changed
 
 - Update GitHub Action to use latest major version (v1).
 

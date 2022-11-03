@@ -133,8 +133,6 @@ For multi-step commands such as `File Bunny: Create New File`, there are keybind
 |-------------- | -------------- |-------------- |-------------- |
 | `➞` (right arrow key) <br/>, or `Tab` for `File Bunny: Open Folder`  | `filebunny.next`    | Skip to next step of a multi-step command | `inFileBunny` |
 | `🠔` (left arrow key) | `filebunny.back` | Go back to previous step of a multi-step command | `inFileBunny` |
-| `Home` | `filebunny.goToTopActiveFile` | Go to the first line of the active file | `!editorReadonly && editorFocus` |
-| `End` | `filebunny.goToBottomActiveFile` | Go to the last line of the active file | `!editorReadonly && editorFocus` |
 
 If you want to modify these keybindings, you can read the [Key Bindings for Visual Studio Code guide](https://code.visualstudio.com/docs/getstarted/keybindings) to learn how.
 

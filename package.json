@@ -7,7 +7,7 @@
   },
   "description": "Perform file actions quickly with keyboard-driven file selection. 🐰⌨️",
   "icon": "img/logo.png",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "engines": {
     "vscode": "^1.46.0",
     "node": ">=12"
@@ -238,16 +238,6 @@
         "key": "tab",
         "command": "filebunny.next",
         "when": "inFileBunny"
-      },
-      {
-        "key": "home",
-        "command": "filebunny.goToTopActiveFile",
-        "when": "!editorReadonly && editorFocus"
-      },
-      {
-        "key": "end",
-        "command": "filebunny.goToBottomActiveFile",
-        "when": "!editorReadonly && editorFocus"
       }
     ],
     "configuration": {
