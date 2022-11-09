@@ -161,7 +161,7 @@ async function moveActiveFile() {
   }
 
   let activeDocUri = vscode.window.activeTextEditor.document.uri;
-  let activeDocFileName = nodePath.basename(activeDocUri.toString());
+  let activeDocFileName = nodePath.basename(activeDocUri.path);
   let workspaceFolderPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
   let absoluteExcludes = configuration.getAbsoluteExcludes(workspaceFolderPath);
 

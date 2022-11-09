@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.4] - 2022-11-09
+
+### Fixed
+
+- Fixed [Issue #7](https://github.com/robole/vscode-file-bunny/issues/7#issuecomment-1305974023). The command `filebunny.moveActiveFile` was renaming the file unintentionally. It was substituting spaces with "%20".
+
 ## [1.3.3] - 2022-11-03
 
 ### Fixed
