@@ -46,7 +46,7 @@ class DuplicateActiveFilePicker extends MultiStepPicker {
     }
 
     this.picker.show();
-    this.picker.enabled = false;
+
     this.picker.busy = true;
 
     let absoluteExcludes = configuration.getAbsoluteExcludes(this.rootFolder);
@@ -65,7 +65,6 @@ class DuplicateActiveFilePicker extends MultiStepPicker {
 
     this.setCurrentStep(this.steps[0]);
     this.picker.busy = false;
-    this.picker.enabled = true;
   }
 
   async onDidAccept() {

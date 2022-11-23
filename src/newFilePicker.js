@@ -37,7 +37,7 @@ class NewFilePicker extends MultiStepPicker {
       return;
     }
     this.picker.show();
-    this.picker.enabled = false;
+
     this.picker.busy = true;
 
     let absoluteExcludes = configuration.getAbsoluteExcludes(this.rootFolder);
@@ -55,8 +55,8 @@ class NewFilePicker extends MultiStepPicker {
     this.steps[0].items = allFolders;
 
     this.setCurrentStep(this.steps[0]);
+
     this.picker.busy = false;
-    this.picker.enabled = true;
   }
 
   async onDidAccept() {

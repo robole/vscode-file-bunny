@@ -40,7 +40,7 @@ class MoveFilePicker extends MultiStepPicker {
     }
 
     this.picker.show();
-    this.picker.enabled = false;
+
     this.picker.busy = true;
 
     let absoluteExcludes = configuration.getAbsoluteExcludes(this.rootFolder);
@@ -66,8 +66,8 @@ class MoveFilePicker extends MultiStepPicker {
     this.steps[0].items = allFiles;
 
     this.setCurrentStep(this.steps[0]);
+
     this.picker.busy = false;
-    this.picker.enabled = true;
   }
 
   async onDidAccept() {

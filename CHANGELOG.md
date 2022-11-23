@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.5] - 2022-11-23
+
+### Fixed
+
+- Commands that involved a QuickPick with multiple steps now do not have focus when run. Something underlying in VS Code changed to cause this. It is resolved by removing the disabling and enabling of the QuickPick when work is being to fetch a file list (`this.picker.enabled = false`) to prevent user interaction. This behaviour was changed in all classes that extend *multiStepPicker.js*: *duplicateActiveFilePicker.js*, *duplicateFilePicker.js*,*duplicateFolderPicker.js*, *moveFilePikcer.js*, *newFilePicker.js*, and *newFolderPicker.js*
+
 ## [1.3.4] - 2022-11-09
 
 ### Fixed
