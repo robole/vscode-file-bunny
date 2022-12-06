@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.6] - 2022-12-06
+
+### Fixed
+
+- Same focus issue as v1.3.5 but for *browser.js*.
+
 ## [1.3.5] - 2022-11-23
 
 ### Fixed

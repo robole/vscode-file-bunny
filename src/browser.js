@@ -84,7 +84,6 @@ class Browser extends EventEmitter {
   }
 
   async update() {
-    this.picker.enabled = false;
     this.picker.busy = true;
 
     this.picker.title = this.uri.fsPath;
@@ -103,7 +102,6 @@ class Browser extends EventEmitter {
 
     this.picker.placeholder = `Type to filter items`;
     this.picker.busy = false;
-    this.picker.enabled = true;
   }
 
   onDidTriggerButton(button) {
