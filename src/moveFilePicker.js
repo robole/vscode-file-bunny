@@ -119,9 +119,6 @@ class MoveFilePicker extends MultiStepPicker {
         await vscode.workspace.fs.rename(sourceUri, destinationUri, {
           overwrite: false,
         });
-
-        // return focus to editor
-        await vscode.window.showTextDocument(destinationUri);
       } else {
         vscode.window.showErrorMessage(
           "File exists here already. No action taken."

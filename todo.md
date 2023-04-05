@@ -2,7 +2,6 @@
 
 ## Tasks
 
-1. For `Move File` - cease opening the file at the end of the action?
 1. Add command name to title for `Open Folder`?
 1. Have a git files (`git ls-files`) version of `File Bunny: Open File`. See branch *open-gitfiles*.
 1. Add recent items to top of file list for `File Bunny: Open Folder`.

@@ -5,26 +5,32 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2023-03-06
+
+### Changed
+
+- The command `Move File` opens the file at the end of the action. This behaviour has been removed to be consistent with the other commands.
+
 ## [1.4.0] - 2023-03-05
 
 ### Added
 
 - Added a title to the dropdown of all commands to clearly identify the command being run. It was added for the following commands:
-	- Open File,
-	- Open File to the Right,
-	- Open File to the Left,
-	- Open File Above,
-	- Open File Below,
-	- Open File in External Default App
+	- `File Bunny: Open File`
+	- `File Bunny: Open File to the Right`
+	- `File Bunny: Open File to the Left`
+	- `File Bunny: Open File Above`
+	- `File Bunny: Open File Below`
+	- `File Bunny: Open File in External Default App`
 
 ### Changed
 
 - Changed the title to include *step name (field changed)* to clearly identify the value being requested/edited. Now the title is in the form of "<command name> - <step name> - <cumlative value from previous steps>". This was changed for the following commands:
-	- Duplicate Active File,
-	- Duplicate File,
-	- Move File,
-	- Create New File,
-	- Create New Folder
+	- `File Bunny: Duplicate Active File`
+	- `File Bunny: Duplicate File`
+	- `File Bunny: Move File`
+	- `File Bunny: Create New File`
+	- `File Bunny: Create New Folder`
 - Changed wording of some titles and placeholder text to be more consistently phrased.
 
 ## [1.3.7] - 2023-03-05
