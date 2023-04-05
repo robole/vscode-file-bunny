@@ -25,7 +25,7 @@ async function openFile() {
     return;
   }
 
-  let selectedFile = await selectWorkspaceFile();
+  let selectedFile = await selectWorkspaceFile("Open File");
 
   if (selectedFile !== undefined) {
     await vscode.commands.executeCommand("vscode.open", selectedFile);
@@ -37,7 +37,9 @@ async function openFileExternal() {
     return;
   }
 
-  let selectedFile = await selectWorkspaceFile();
+  let selectedFile = await selectWorkspaceFile(
+    "Open File in External Default App"
+  );
 
   if (selectedFile !== undefined) {
     try {
@@ -67,7 +69,7 @@ async function openFileAbove() {
     return;
   }
 
-  let selectedFile = await selectWorkspaceFile();
+  let selectedFile = await selectWorkspaceFile("Open File Above");
 
   if (selectedFile !== undefined) {
     await vscode.commands.executeCommand("workbench.action.splitEditorUp");
@@ -83,7 +85,7 @@ async function openFileBelow() {
     return;
   }
 
-  let selectedFile = await selectWorkspaceFile();
+  let selectedFile = await selectWorkspaceFile("Open File Below");
 
   if (selectedFile !== undefined) {
     await vscode.commands.executeCommand("workbench.action.splitEditorDown");
@@ -99,7 +101,7 @@ async function openFileToRight() {
     return;
   }
 
-  let selectedFile = await selectWorkspaceFile();
+  let selectedFile = await selectWorkspaceFile("Open File to the Right");
 
   if (selectedFile !== undefined) {
     await vscode.commands.executeCommand("workbench.action.splitEditorRight");
@@ -115,7 +117,7 @@ async function openFileToLeft() {
     return;
   }
 
-  let selectedFile = await selectWorkspaceFile();
+  let selectedFile = await selectWorkspaceFile("Open File to the Left");
 
   if (selectedFile !== undefined) {
     await vscode.commands.executeCommand("workbench.action.splitEditorLeft");
@@ -126,7 +128,7 @@ async function openFileToLeft() {
   }
 }
 
-async function selectWorkspaceFile() {
+async function selectWorkspaceFile(title = "") {
   if (util.isWorkspaceOpen() === false) {
     return undefined;
   }
@@ -143,7 +145,8 @@ async function selectWorkspaceFile() {
 
   let selectedFile = await vscode.window.showQuickPick(pickerItems, {
     ignoreFocusOut: true,
-    placeHolder: `Open file`,
+    placeHolder: `Pick a file`,
+    title,
   });
 
   if (selectedFile !== undefined) {
@@ -179,7 +182,7 @@ async function moveActiveFile() {
   let selectedFolder = await vscode.window.showQuickPick(pickerItems, {
     ignoreFocusOut: true,
     placeHolder: `Pick a location`,
-    title: `Move file`,
+    title: `Move Active File`,
   });
 
   if (selectedFolder !== undefined) {
@@ -224,7 +227,7 @@ async function renameActiveFile() {
 
   let newName = await vscode.window.showInputBox({
     value: name,
-    prompt: `Rename file: ${getRelativePathOfActiveFile()}`,
+    prompt: `Rename Active File - '${getRelativePathOfActiveFile()}'`,
   });
 
   if (

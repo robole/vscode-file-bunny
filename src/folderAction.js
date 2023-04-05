@@ -80,7 +80,7 @@ async function duplicateFolder() {
 
 async function deleteFolder() {
   if (vscode.workspace.workspaceFolders) {
-    let selectedFolder = await selectWorkspaceFolder(false);
+    let selectedFolder = await selectWorkspaceFolder(false, "Delete Folder");
 
     if (selectedFolder !== undefined) {
       let newUri = vscode.Uri.file(selectedFolder.path);
@@ -106,7 +106,10 @@ async function openWorkspaceFolderExternal() {
 }
 
 async function openFolderExternal() {
-  let selectedFolder = await selectWorkspaceFolder(false);
+  let selectedFolder = await selectWorkspaceFolder(
+    false,
+    "Open Workspace Folder in External Default App"
+  );
 
   if (selectedFolder !== undefined) {
     try {
@@ -118,7 +121,7 @@ async function openFolderExternal() {
   }
 }
 
-async function selectWorkspaceFolder(includeTopFolder = true) {
+async function selectWorkspaceFolder(includeTopFolder = true, title = "") {
   if (vscode.workspace.workspaceFolders === undefined) {
     return undefined;
   }
@@ -139,7 +142,8 @@ async function selectWorkspaceFolder(includeTopFolder = true) {
 
   let selectedFolder = await vscode.window.showQuickPick(pickerItems, {
     ignoreFocusOut: true,
-    placeHolder: `Choose folder`,
+    placeHolder: `Pick a folder`,
+    title,
   });
 
   return selectedFolder;

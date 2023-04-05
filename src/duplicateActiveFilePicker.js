@@ -12,11 +12,11 @@ const util = require("./util");
 class DuplicateActiveFilePicker extends MultiStepPicker {
   constructor() {
     let steps = [
-      new Step(1, `Duplicate Active File`, "Pick a location", []),
+      new Step(1, `Duplicate Active File - location`, "Pick a location", []),
       new Step(
         2,
-        `Duplicate Active File`,
-        "Type a filename",
+        `Duplicate Active File - name`,
+        "Enter a name",
         [],
         [vscode.QuickInputButtons.Back]
       ),
@@ -27,7 +27,7 @@ class DuplicateActiveFilePicker extends MultiStepPicker {
     this.fileName = nodePath.basename(
       vscode.window.activeTextEditor.document.fileName
     );
-    this.steps[0].title = `Duplicate '${this.fileName}'`;
+
     this.steps[1].value = this.fileName;
 
     if (util.isWorkspaceOpen()) {
@@ -77,10 +77,9 @@ class DuplicateActiveFilePicker extends MultiStepPicker {
       this.picker.value = "";
 
       this.currentStepNum = 2;
-      this.steps[1].title = `Duplicate '${this.fileName}' to '${nodePath.join(
-        selection,
+      this.steps[1].title = `Duplicate Active File - name - '${
         this.fileName
-      )}'`;
+      }' to '${nodePath.join(selection, this.fileName)}'`;
       this.setCurrentStep(this.steps[1]);
     } else if (this.currentStepNum === 2) {
       this.steps[1].value = currentValue;
@@ -115,7 +114,7 @@ class DuplicateActiveFilePicker extends MultiStepPicker {
   }
 
   setTitle(filepath) {
-    this.picker.title = `Duplicate '${this.fileName}' to '${filepath}'`;
+    this.picker.title = `Duplicate Active File - name - '${this.fileName}' to '${filepath}'`;
   }
 
   async duplicateFile() {

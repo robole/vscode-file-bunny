@@ -12,11 +12,11 @@ const configuration = require("./configuration");
 class NewFolderPicker extends MultiStepPicker {
   constructor() {
     let steps = [
-      new Step(1, "Create a new folder", "Pick a location"),
+      new Step(1, "Create New Folder - Location", "Pick a location"),
       new Step(
         2,
-        "Create a new folder",
-        "Type a name (use left arrow key to return to previous step)",
+        "Create New Folder - Name",
+        "Enter a name",
         [],
         [vscode.QuickInputButtons.Back]
       ),
@@ -95,7 +95,7 @@ class NewFolderPicker extends MultiStepPicker {
   }
 
   setTitle(filepath) {
-    this.picker.title = `Create a new folder: "${filepath}"`;
+    this.picker.title = `Create New Folder - name - '${filepath}'`;
   }
 }
 

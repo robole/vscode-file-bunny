@@ -12,18 +12,18 @@ const util = require("./util");
 class DuplicateFilePicker extends MultiStepPicker {
   constructor() {
     let steps = [
-      new Step(1, `Duplicate File`, "Pick a file to duplicate", []),
+      new Step(1, `Duplicate File - file`, "Pick a file", []),
       new Step(
         2,
-        `Duplicate File`,
+        `Duplicate File - location`,
         "Pick a location",
         [],
         [vscode.QuickInputButtons.Back]
       ),
       new Step(
         3,
-        `Duplicate File`,
-        "Type a filename",
+        `Duplicate File - name`,
+        "Enter a name",
         [],
         [vscode.QuickInputButtons.Back]
       ),
@@ -84,14 +84,14 @@ class DuplicateFilePicker extends MultiStepPicker {
       this.steps[0].value = selection;
       this.picker.value = "";
 
-      this.steps[1].title = `Duplicate '${this.steps[0].value}' to`;
+      this.steps[1].title = `Duplicate File - location - '${this.steps[0].value}' to?`;
 
       this.goForward();
     } else if (this.currentStepNum === 2) {
       let selection = pickedItems[0].name;
       this.steps[1].value = selection;
 
-      this.steps[2].title = `Duplicate '${this.steps[0].value}' to '${this.steps[1].value}'`;
+      this.steps[2].title = `Duplicate File - name - '${this.steps[0].value}' to '${this.steps[1].value}'`;
       this.steps[2].value = nodePath.basename(this.steps[0].value); // only want filename from step 1
 
       this.goForward();
@@ -111,7 +111,7 @@ class DuplicateFilePicker extends MultiStepPicker {
   }
 
   setTitle(from, to) {
-    this.picker.title = `Duplicate '${from}' to '${to}'`;
+    this.picker.title = `Duplicate File - name - '${from}' to '${to}'`;
   }
 
   async duplicateFile() {

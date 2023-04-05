@@ -12,10 +12,10 @@ const util = require("./util");
 class MoveFilePicker extends MultiStepPicker {
   constructor() {
     let steps = [
-      new Step(1, `Move File`, "Pick a file to move", []),
+      new Step(1, `Move File - file`, "Pick a file", []),
       new Step(
         2,
-        `Move File`,
+        `Move File - location`,
         "Pick a location",
         [],
         [vscode.QuickInputButtons.Back]
@@ -27,11 +27,6 @@ class MoveFilePicker extends MultiStepPicker {
     if (util.isWorkspaceOpen()) {
       this.rootFolder = vscode.workspace.workspaceFolders[0].uri.fsPath;
     }
-
-    let disposable1 = this.picker.onDidChangeValue(
-      this.onDidChangeValue.bind(this)
-    );
-    this.disposables.push(disposable1);
   }
 
   async run() {
@@ -78,7 +73,7 @@ class MoveFilePicker extends MultiStepPicker {
       this.steps[0].value = selection;
       this.picker.value = "";
 
-      this.steps[1].title = `Move '${selection}' to`;
+      this.steps[1].title = `Move File - location - '${selection}'`;
 
       this.goForward();
     } else if (this.currentStepNum === 2) {
@@ -104,17 +99,6 @@ class MoveFilePicker extends MultiStepPicker {
       }, 20);
       this.picker.enabled = true;
     }
-  }
-
-  onDidChangeValue(newValue) {
-    if (this.currentStepNum === 2) {
-      let newFilePath = nodePath.join(this.steps[1].value, newValue);
-      this.setTitle(this.steps[0].value, newFilePath);
-    }
-  }
-
-  setTitle(from, to) {
-    this.picker.title = `Move '${from}' to '${to}'`;
   }
 
   async moveFile() {
