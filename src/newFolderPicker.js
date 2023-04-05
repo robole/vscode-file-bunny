@@ -95,7 +95,7 @@ class NewFolderPicker extends MultiStepPicker {
   }
 
   setTitle(filepath) {
-    this.picker.title = `Create a new file: "${filepath}"`;
+    this.picker.title = `Create a new folder: "${filepath}"`;
   }
 }
 
