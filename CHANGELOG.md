@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.7] - 2023-03-05
+
+### Fixed
+
+- Fixed typo for `File Bunny: Create New Folder`. The second step of action said "Create a new file:...".
+
 ## [1.3.6] - 2022-12-06
 
 ### Fixed
