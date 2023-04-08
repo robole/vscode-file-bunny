@@ -5,13 +5,21 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.5.0] - 2023-03-06
+## [1.6.0] - 2023-04-08
+
+### Changed
+
+- Upgraded to Webpack, Webpack CLI, and VSCE to latest major versions to make publishing more reliable.
+- Changed license to Apache 2.0.
+- Tidied up *Show appreciation* section of README.
+
+## [1.5.0] - 2023-04-06
 
 ### Changed
 
 - The command `Move File` opens the file at the end of the action. This behaviour has been removed to be consistent with the other commands.
 
-## [1.4.0] - 2023-03-05
+## [1.4.0] - 2023-04-05
 
 ### Added
 

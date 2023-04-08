@@ -154,11 +154,18 @@ If you have a suggestion or find a bug, please file an issue.
 
 If you want to contribute to the development, please discuss it with me first! I do not know when I would have time to perform a code review!
 
-## Gratitude
+## Appreciate
 
-You can [buy me a coffee or become a supporter](https://ko-fi.com/roboleary) to support my work.
+You can show your appreciation by:
+1. [Buying me a coffee or sponsoring me](https://ko-fi.com/roboleary)
+1. Leaving a positive review in the [visual studio marketplace](<https://marketplace.visualstudio.com/items?itemName=robole.marky-stats&ssr=false#review-details>).
+1. Starring the repo 🌟.
 
-If you are happy with the extension, please star the repo, and leave a review to help others find it. 🌟
+This will **help other people find the extension**.
+
+It will **offer me encouragement** to continue, and can provide **a path to dedicating more time to open-source** in the future.
+
+Thank you! 🙏
 
 ## Frequently Asked Questions (FAQ)
 
