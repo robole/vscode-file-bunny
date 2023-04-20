@@ -9,7 +9,7 @@
 1. `File Bunny: New Project from Template`?
 1. Add multi-root workspace support?
 
-## Long-standing API issues
+## Long-standing Extension API issues
 
 - Cannot delete active file if it is image. No way to reference active editor. Awaiting change from this [open issue](https://github.com/microsoft/vscode/issues/15178).
 - There is an [open issue for adding support for file icons to the QuickPick API](https://github.com/microsoft/vscode/issues/59826).
