@@ -4,7 +4,8 @@ const assert = require("assert");
 
 describe("extension", () => {
   const extensionShortName = "file-bunny";
-  const extensionID = `robole.${extensionShortName}`;
+  const publisherName = "robole";
+  const extensionID = `${publisherName}.${extensionShortName}`;
 
   let extension;
 
@@ -12,23 +13,35 @@ describe("extension", () => {
     extension = vscode.extensions.getExtension(extensionID);
   });
 
-  it("All commands in the package.json should be registered in extension", (done) => {
-    const packageCommands = extension.packageJSON.contributes.commands.map(
-      (c) => c.command
-    );
+  it("should activate the extension on startup", async () => {
+    // we delay 1 second to give the extension time to load
+    setTimeout(async () => {
+      assert.strictEqual(extension.isActive, true);
+    });
+  });
 
-    // get all extension commands excluding internal commands.
-    vscode.commands.getCommands(true).then((allCommands) => {
-      const activeCommands = allCommands.filter((c) =>
+  it("should register all package.json commands in the extension", async () => {
+    // we delay 1 second to give the extension time to load
+    setTimeout(async () => {
+      // get active commands for this extension
+      const allCommands = await vscode.commands.getCommands(true);
+      const extensionActiveCommands = allCommands.filter((c) =>
         c.startsWith(`${extensionShortName}.`)
       );
 
-      activeCommands.forEach((command) => {
-        const result = packageCommands.some((c) => c === command);
-        assert.ok(result);
-      });
+      // commands declared in package.json
+      const packageCommands = extension.packageJSON.contributes.commands.map(
+        (c) => c.command
+      );
 
-      done();
-    });
+      packageCommands.forEach((command) => {
+        const result = extensionActiveCommands.some((c) => c === command);
+        assert.strictEqual(
+          result,
+          true,
+          `${command} command is in package.json but not registered in extension.`
+        );
+      });
+    }, 1000);
   });
 });

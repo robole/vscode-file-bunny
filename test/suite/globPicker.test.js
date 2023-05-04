@@ -3,7 +3,7 @@ const path = require("path");
 const globPicker = require("../../src/globPicker");
 const FileType = require("../../src/fileType");
 
-describe("globPicker", function () {
+describe("globPicker", () => {
   describe("getFilesRecursivelyAsPickerItems()", () => {
     let projectRoot = path.join(__dirname, "..", "..");
 
@@ -532,12 +532,12 @@ describe("globPicker", function () {
     });
 
     it("should return the files for the root folder ", async () => {
-      let root ="/";
+      let root = "/";
 
-      if(process.platform === 'win32'){
+      if (process.platform === "win32") {
         root = "C:\\";
       }
-      
+
       let files = await globPicker.getFilesAsPickerItems(root, {
         showFiles: false,
         showFolders: true,
@@ -550,6 +550,5 @@ describe("globPicker", function () {
 
       assert.strictEqual(files.length > 1, true);
     });
-    
   });
 });

@@ -14,9 +14,11 @@
 <img src="https://img.shields.io/visual-studio-marketplace/v/robole.file-bunny?logo=visual-studio-code&color=ffa500" alt="Visual Studio Marketplace Version">
 <img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=52KB&color=008000"
 alt="Extension file size in bytes">
-<img src="https://img.shields.io/visual-studio-marketplace/r/robole.file-bunny?logo=visual-studio-code&color=yellow" alt="Visual Studio Marketplace Rating">
+<img src="https://img.shields.io/visual-studio-marketplace/r/robole.file-bunny?logo=visual-studio-code&color=ffd54c" alt="Visual Studio Marketplace Rating">
+<img src="https://img.shields.io/visual-studio-marketplace/d/robole.file-bunny?logo=visual-studio-code&color=blue" alt="downloads"/>
+<img src="https://img.shields.io/visual-studio-marketplace/i/robole.file-bunny?logo=visual-studio-code&color=blue" alt="installs"/>
 <img src="https://img.shields.io/static/v1?label=built%20with&message=carrot%20juice%20%26%20javascript&color=orange" alt="Built with carrot juice and javascript"/>
-<a href="https://ko-fi.com/roboleary"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-$4-orange?logo=buy-me-a-coffee" alt="Buy me a coffee"></a>
+<a href="https://ko-fi.com/roboleary"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-$4-yellow?logo=buy-me-a-coffee&label=Buy%20me%20a%20coffee&color=ffc300" alt="Buy me a coffee"></a>
 </p>
 
 No need to *hop* to the Sidebar to work with files. 😜
@@ -158,7 +160,7 @@ If you want to contribute to the development, please discuss it with me first! I
 
 You can show your appreciation by:
 1. [Buying me a coffee or sponsoring me](https://ko-fi.com/roboleary)
-1. Leaving a positive review in the [visual studio marketplace](<https://marketplace.visualstudio.com/items?itemName=robole.marky-stats&ssr=false#review-details>).
+1. Leaving a positive review in the [visual studio marketplace](<https://marketplace.visualstudio.com/items?itemName=robole.file-bunny&ssr=false#review-details>).
 1. Starring the repo 🌟.
 
 This will **help other people find the extension**.
@@ -175,7 +177,7 @@ No. I don't use multi-root workspaces, so I have not implemented this feature. I
 
 ### 2) Why can't I delete an image and some non-code files with the command `File Bunny: Delete Active File` ?
 
-This is a current limitation of VS Code. When you open an image in VS Code, the tab cannot be referenced through the Extensions API. There is an [open issue](https://github.com/microsoft/vscode/issues/15178) to change this. When [if] this change happens, I can update the extension to incorporate this behaviour.
+This is a current limitation of VS Code. When you open an image in VS Code, the tab cannot be referenced through the Extensions API. There is an [open issue in the VS Code repo](https://github.com/microsoft/vscode/issues/15178) to change this. I have [an issue for this](https://github.com/robole/vscode-file-bunny/issues/4) and will change if/when Microsoft add this feature.
 
 ### 3) When I run the command `File Bunny: Open Folder` on Windows, I see extra folders at *C:*. What's the deal with that?
 
@@ -188,11 +190,3 @@ These are hidden system folders such as the recycle bin. You don't see these in 
 The reason this extension shows them is because it uses [node glob](https://www.npmjs.com/package/glob) under the hood, and glob dutifully reports these back as folders. If you open them, you can't do anything with them because of permissions.
 
 This is not something I can turn off, it is just a quirk with Windows and glob. If it bothers you, add the specific folders to the `Filebunny: Excludes` setting, so that you won't see them in future.
-
-### 4) Can you use the language file icons in the Quickpick instead of the generic file or folder icon?
-
-Currently, it is only possible to use [product icons](https://code.visualstudio.com/api/references/icons-in-labels) in the label of a [QuickPickItem](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem).
-
-Product icons are the built-in icons that are used throughout the editor. The product icons that ship with VS Code are contained in the [Codicon icon font](https://github.com/microsoft/vscode-codicons) and form the default product icon theme. I use the *file*, *symbolic link*, and *folder* icons from this font in the labels.
-
-There is an [open issue for adding support for file icons to the QuickPick API](https://github.com/microsoft/vscode/issues/59826). File icons are used next to file names in the UI, and are defined in a [file icon theme](https://code.visualstudio.com/api/extension-guides/file-icon-theme).

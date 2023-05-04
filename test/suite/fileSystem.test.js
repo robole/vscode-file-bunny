@@ -4,7 +4,7 @@ let assert = require("assert");
 const path = require("path");
 const fileSystem = require("../../src/fileSystem");
 
-describe("fileSystem", function () {
+describe("fileSystem", () => {
   describe("exists()", () => {
     let testFile = path.join(__dirname, "..", "..", "test", "test.md");
     let testFileUri = vscode.Uri.file(testFile);
