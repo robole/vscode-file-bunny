@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.1] - 2023-12-09
+
+### Changed
+
+- The `vsce` package is deprecated. Updated dev dependencies to use `@vscode/vsce` instead.
+- Update badge colors to be uniform colors in README.md.
+
+## Fixed
+
+- Fixed a bug when running `File Bunny: Rename Active File` on a file when no workspace is open. See [issue](https://github.com/robole/vscode-file-bunny/issues/14) on GitHub.
+
 ## [1.8.0] - 2023-04-20
 
 ### Added

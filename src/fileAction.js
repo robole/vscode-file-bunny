@@ -224,10 +224,15 @@ async function renameActiveFile() {
   let { uri, fileName } = vscode.window.activeTextEditor.document;
   let name = nodePath.basename(fileName);
   let dir = nodePath.dirname(fileName);
+  let relativePath = getRelativePathOfActiveFile();
+
+  if (relativePath.startsWith("..")) {
+    relativePath = uri.fsPath;
+  }
 
   let newName = await vscode.window.showInputBox({
     value: name,
-    prompt: `Rename Active File - '${getRelativePathOfActiveFile()}'`,
+    prompt: `Rename Active File - '${relativePath}'`,
   });
 
   if (
@@ -361,6 +366,10 @@ function goToBottomActiveFile() {
   }
 }
 
+/**
+ * Gets the path of the active file relative to the workspace folder. If no workspace is open, the absolute path is returned.
+ * @returns {string}
+ */
 function getRelativePathOfActiveFile() {
   if (util.hasActiveTextEditor() === false) {
     return undefined;
@@ -369,10 +378,15 @@ function getRelativePathOfActiveFile() {
   let { uri } = vscode.window.activeTextEditor.document;
   let dirPath = nodePath.dirname(uri.fsPath);
   let fileName = nodePath.basename(uri.fsPath);
+  let relativePath = uri.fsPath;
 
-  let workspaceRoot = vscode.workspace.workspaceFolders[0].uri.fsPath;
-  let relative = nodePath.relative(workspaceRoot, dirPath);
-  return nodePath.join(relative, fileName);
+  if (util.isWorkspaceOpen()) {
+    let workspaceRoot = vscode.workspace.workspaceFolders[0].uri.fsPath;
+    let relativeDir = nodePath.relative(workspaceRoot, dirPath);
+    relativePath = nodePath.join(relativeDir, fileName);
+  }
+
+  return relativePath;
 }
 
 module.exports = {
