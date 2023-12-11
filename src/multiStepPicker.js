@@ -94,7 +94,7 @@ class MultiStepPicker {
       this.currentStepNum += 1;
       this.setCurrentStep(this.steps[this.currentStepNum - 1]);
     } else {
-      this.picker.hide();
+      this.close();
       this.running = false;
     }
   }
@@ -115,6 +115,11 @@ class MultiStepPicker {
       item.dispose();
     });
     this.picker.dispose();
+  }
+
+  close() {
+    this.dispose();
+    this.picker.hide();
   }
 }
 

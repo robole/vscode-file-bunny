@@ -83,7 +83,7 @@ class NewFolderPicker extends MultiStepPicker {
         return;
       }
 
-      this.picker.hide();
+      this.close();
     }
   }
 

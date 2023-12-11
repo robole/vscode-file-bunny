@@ -10,9 +10,9 @@
       "detail": "vsce package ."
     },
     {
-      "label": "Run webpack on startup",
+      "label": "Run bundler on startup",
       "type": "shell",
-      "command": "export NODE_OPTIONS=--openssl-legacy-provider;npm run dev",
+      "command": "npm run dev",
       "presentation": {
         "reveal": "always",
         "panel": "new"

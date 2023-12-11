@@ -3,6 +3,7 @@
 const vscode = require("vscode");
 const homeFolder = require("os").homedir();
 const configuration = require("./configuration");
+const util = require("./util");
 const Browser = require("./browser");
 const globPicker = require("./globPicker");
 const NewFolderPicker = require("./newFolderPicker");
@@ -61,7 +62,10 @@ async function getStartingLocation() {
 }
 
 async function createFolder() {
-  if (vscode.workspace.workspaceFolders === undefined) {
+  if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage(
+      "Cannot create a new folder. There is no workspace open."
+    );
     return;
   }
 
@@ -70,7 +74,10 @@ async function createFolder() {
 }
 
 async function duplicateFolder() {
-  if (vscode.workspace.workspaceFolders === undefined) {
+  if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage(
+      "Cannot duplicate a folder. There is no workspace open."
+    );
     return;
   }
 
@@ -79,6 +86,13 @@ async function duplicateFolder() {
 }
 
 async function deleteFolder() {
+  if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage(
+      "Cannot delete a folder. There is no workspace open."
+    );
+    return;
+  }
+
   if (vscode.workspace.workspaceFolders) {
     let selectedFolder = await selectWorkspaceFolder(false, "Delete Folder");
 
@@ -94,6 +108,11 @@ async function deleteFolder() {
 }
 
 async function openWorkspaceFolderExternal() {
+  if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage("There is no workspace open.");
+    return;
+  }
+
   if (vscode.workspace.workspaceFolders !== undefined) {
     let workspaceFolder = vscode.workspace.workspaceFolders[0];
 
@@ -106,6 +125,11 @@ async function openWorkspaceFolderExternal() {
 }
 
 async function openFolderExternal() {
+  if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage("There is no workspace open.");
+    return;
+  }
+
   let selectedFolder = await selectWorkspaceFolder(
     false,
     "Open Workspace Folder in External Default App"

@@ -99,7 +99,7 @@ class DuplicateFilePicker extends MultiStepPicker {
       this.steps[2].value = this.picker.value;
 
       await this.duplicateFile();
-      this.picker.hide();
+      this.close();
     }
   }
 

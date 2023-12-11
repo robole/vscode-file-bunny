@@ -8,6 +8,7 @@
 1. Add more tests (refactor).
 1. `File Bunny: New Project from Template`?
 1. Add multi-root workspace support?
+1. `File Bunny: Move Active File`, `File Bunny: Duplicate Active File`,  and `File Bunny: Delete File` perform no action when a workspace is not open because it is too slow to index all folders of system. It'd be better to have the dialog version of file picker for this.
 
 ## Further ideas
 

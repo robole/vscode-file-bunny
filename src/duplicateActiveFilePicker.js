@@ -45,6 +45,14 @@ class DuplicateActiveFilePicker extends MultiStepPicker {
       return;
     }
 
+    if (this.rootFolder === undefined) {
+      vscode.window.showWarningMessage(
+        "You cannot duplicate a file if a workspace is not open."
+      );
+      this.close();
+      return;
+    }
+
     this.picker.show();
 
     this.picker.busy = true;
@@ -86,7 +94,7 @@ class DuplicateActiveFilePicker extends MultiStepPicker {
 
       await this.duplicateFile();
 
-      this.picker.hide();
+      this.close();
     }
   }
 

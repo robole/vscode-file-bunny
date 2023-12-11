@@ -81,7 +81,7 @@ class MoveFilePicker extends MultiStepPicker {
       this.steps[1].value = selection;
 
       await this.moveFile();
-      this.picker.hide();
+      this.close();
     }
   }
 

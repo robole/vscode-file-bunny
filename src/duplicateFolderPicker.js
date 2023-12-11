@@ -179,7 +179,7 @@ class DuplicateFolderPicker extends MultiStepPicker {
       vscode.window.showErrorMessage(err.message);
     }
 
-    this.picker.hide();
+    this.close();
   }
 }
 

@@ -2,6 +2,7 @@
 // eslint-disable-next-line import/no-unresolved, node/no-missing-require
 const vscode = require("vscode");
 const nodePath = require("path");
+
 const configuration = require("./configuration");
 const NewFilePicker = require("./newFilePicker");
 const DuplicateFilePicker = require("./duplicateFilePicker");
@@ -13,6 +14,9 @@ const util = require("./util");
 
 async function createFile() {
   if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage(
+      "You cannot create a file if a workspace is not open."
+    );
     return;
   }
 
@@ -22,6 +26,9 @@ async function createFile() {
 
 async function openFile() {
   if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage(
+      "You cannot open a file if a workspace is not open."
+    );
     return;
   }
 
@@ -66,6 +73,9 @@ async function openActiveFileExternal() {
 
 async function openFileAbove() {
   if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage(
+      "You cannot open a file if a workspace is not open."
+    );
     return;
   }
 
@@ -82,6 +92,9 @@ async function openFileAbove() {
 
 async function openFileBelow() {
   if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage(
+      "You cannot open a file if a workspace is not open."
+    );
     return;
   }
 
@@ -98,6 +111,9 @@ async function openFileBelow() {
 
 async function openFileToRight() {
   if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage(
+      "You cannot open a file if a workspace is not open."
+    );
     return;
   }
 
@@ -114,6 +130,9 @@ async function openFileToRight() {
 
 async function openFileToLeft() {
   if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage(
+      "You cannot open a file if a workspace is not open."
+    );
     return;
   }
 
@@ -165,17 +184,26 @@ async function moveActiveFile() {
 
   let activeDocUri = vscode.window.activeTextEditor.document.uri;
   let activeDocFileName = nodePath.basename(activeDocUri.path);
-  let workspaceFolderPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
-  let absoluteExcludes = configuration.getAbsoluteExcludes(workspaceFolderPath);
+
+  if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage(
+      "You cannot move an active file if a workspace is not open."
+    );
+    return;
+  }
+
+  let startingLocation = vscode.workspace.workspaceFolders[0].uri.fsPath;
+  let absoluteExcludes = configuration.getAbsoluteExcludes(startingLocation);
+  let topFolderDescription = "Workspace Root";
 
   let pickerItems = await globPicker.getFilesRecursivelyAsPickerItems(
-    workspaceFolderPath,
+    startingLocation,
     {
       showFiles: false,
       showFolders: true,
       excludes: absoluteExcludes,
       includeTopFolder: true,
-      topFolderDescription: "Workspace Root",
+      topFolderDescription,
     }
   );
 
@@ -187,7 +215,7 @@ async function moveActiveFile() {
 
   if (selectedFolder !== undefined) {
     let newUri = vscode.Uri.file(
-      nodePath.join(workspaceFolderPath, selectedFolder.name, activeDocFileName)
+      nodePath.join(startingLocation, selectedFolder.name, activeDocFileName)
     );
 
     let exists = await fileSystem.exists(newUri);
@@ -256,6 +284,7 @@ async function deleteActiveFile() {
 
   let { uri } = vscode.window.activeTextEditor.document;
   await vscode.workspace.fs.delete(uri, { useTrash: true });
+  await util.closeTextEditor(uri);
 
   // give focus to next editor
   await vscode.commands.executeCommand("workbench.action.nextEditorInGroup");
@@ -263,6 +292,9 @@ async function deleteActiveFile() {
 
 async function duplicateFile() {
   if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage(
+      "You cannot duplicate a file if a workspace is not open."
+    );
     return;
   }
 
@@ -272,6 +304,9 @@ async function duplicateFile() {
 
 async function moveFile() {
   if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage(
+      "You cannot move a file if a workspace is not open."
+    );
     return;
   }
 
@@ -281,6 +316,9 @@ async function moveFile() {
 
 async function deleteFile() {
   if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage(
+      "You cannot delete a file if a workspace is not open."
+    );
     return;
   }
 
@@ -308,6 +346,7 @@ async function deleteFile() {
     );
 
     await vscode.workspace.fs.delete(selectedFileUri, { useTrash: true });
+    await util.closeTextEditor(selectedFileUri);
 
     // give focus to next editor
     await vscode.commands.executeCommand("workbench.action.nextEditorInGroup");

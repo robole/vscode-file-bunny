@@ -11,6 +11,18 @@ function hasActiveTextEditor() {
   return !(vscode.window.activeTextEditor === undefined);
 }
 
+async function closeTextEditor(filepath) {
+  const tabs = vscode.window.tabGroups.all.map((tg) => tg.tabs).flat();
+  const index = tabs.findIndex(
+    (tab) =>
+      tab.input instanceof vscode.TabInputText &&
+      tab.input.uri.path === filepath.path
+  );
+  if (index !== -1) {
+    await vscode.window.tabGroups.close(tabs[index]);
+  }
+}
+
 function isRootFolder(p) {
   const parentPath = nodePath.join(p, "../");
   if (p === parentPath || parentPath === "./" || /\w:\/$/.test(p)) {
@@ -93,6 +105,7 @@ function createUniqueFileName(fileName, index) {
 module.exports = {
   isWorkspaceOpen,
   isRootFolder,
+  closeTextEditor,
   hasActiveTextEditor,
   enableKeyBindings,
   disableKeyBindings,

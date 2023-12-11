@@ -5,6 +5,14 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.10.0] - 2023-12-12
+
+### Changed
+
+- For `File Bunny: Open File`, `File Bunny: Open File to the Left`, `File Bunny: Open File to the Right`, `File Bunny: Open File Above`, `File Bunny: Open File Below`, `File Bunny: Create New File`, `File Bunny: Move File`, `File Bunny: Duplicate File`, `File Bunny: Delete File`, `File Bunny: Move Active File`, `File Bunny: Duplicate Active File`, `File Bunny: Open Workspace Folder in External Default App`, `File Bunny: Open Folder in External Default App`, `File Bunny: Create New Folder`, `File Bunny: Duplicate Folder`, `File Bunny: Delete Folder` : Give a warning message when no workspace is open because no action will take place. Can consider a different approach for some of these commands in future.
+- For `File Bunny: Delete Active File` and `File Bunny: Delete File`: Close the `TextEditor` once the file is deleted.
+- Change `MultiStepPicker` and all children to dispose of all disposables when closed. Oddly, when no workspace is open the disposal needs to be done explicitly. When a workspace is open, the `onDidHide` event is taking care of it.
+
 ## [1.9.2] - 2023-12-11
 
 ### Fixed

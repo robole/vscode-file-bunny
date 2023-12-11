@@ -95,7 +95,7 @@ class NewFilePicker extends MultiStepPicker {
         vscode.window.showErrorMessage(err);
       }
 
-      this.picker.hide();
+      this.close();
     }
   }
 
