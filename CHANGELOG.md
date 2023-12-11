@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.9.1] - 2023-12-11
+
+### Fixed
+
+- The GitHub Action for publishing the extension to the marketplace is failing for the step for the VS Code Marketplace. It may be that I am in Turkiye and some URL is blocked! Regardless, now it bundles the extension once and use that bundled extension to publish to both marketplaces.
+
 ## [1.9.0] - 2023-12-11
 
 ### Changed
