@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.9.0] - 2023-12-11
+
+### Changed
+
+- Switched bundler from webpack to ESBuild.
+- Changed "Run Extension" launch config (*launch.json*) to include `outFiles` property to be able to break properly when debugging.
+
+### Removed
+
+- Remove *webpack.config.js*.
+
 ## [1.8.1] - 2023-12-09
 
 ### Changed

@@ -12,7 +12,7 @@
 <p align="center">
 <img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=made%20for&message=VS%20Code&color=blue" alt="Made for VSCode">
 <img src="https://img.shields.io/visual-studio-marketplace/v/robole.file-bunny?logo=visual-studio-code&color=blue" alt="Visual Studio Marketplace Version">
-<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=58KB&color=blue"
+<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=60KB&color=blue"
 alt="Extension file size in bytes">
 <img src="https://img.shields.io/visual-studio-marketplace/r/robole.file-bunny?logo=visual-studio-code&color=blue" alt="Visual Studio Marketplace Rating">
 <img src="https://img.shields.io/visual-studio-marketplace/d/robole.file-bunny?logo=visual-studio-code&color=blue" alt="downloads"/>
