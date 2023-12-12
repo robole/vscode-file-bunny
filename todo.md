@@ -2,7 +2,6 @@
 
 ## Tasks
 
-1. Add command name to title for `Open Folder`?
 1. Have a git files (`git ls-files`) version of `File Bunny: Open File`. See branch *open-gitfiles*.
 1. Add recent items to top of file list for `File Bunny: Open Folder`.
 1. Add more tests (refactor).
@@ -22,7 +21,7 @@
 1. Use brace expansion <https://www.npmjs.com/package/brace-expansion> ?
 1. `File Bunny: Copy Active File as Base64`
 
-## Performance
+## Performance improvements
 
 - Only async methods are used for IO operations. These are [2.3X faster than their sync counterparts](https://jinoantony.com/blog/async-vs-sync-nodejs-a-simple-benchmark). ✅
 - Use caching for calls for Browser's reading of folder.
