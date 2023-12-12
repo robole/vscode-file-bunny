@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-    <img align="center" src="img/logo.png" width="200">
+    <img align="center" alt="File Bunny logo. It is a bunny inside a filing cabinet with its head popped up between files" src="img/logo.png" width="200">
   <br>
 	<br>
   File Bunny
@@ -12,7 +12,7 @@
 <p align="center">
 <img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=made%20for&message=VS%20Code&color=blue" alt="Made for VSCode">
 <img src="https://img.shields.io/visual-studio-marketplace/v/robole.file-bunny?logo=visual-studio-code&color=blue" alt="Visual Studio Marketplace Version">
-<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=60KB&color=blue"
+<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=61KB&color=blue"
 alt="Extension file size in bytes">
 <img src="https://img.shields.io/visual-studio-marketplace/r/robole.file-bunny?logo=visual-studio-code&color=blue" alt="Visual Studio Marketplace Rating">
 <img src="https://img.shields.io/visual-studio-marketplace/d/robole.file-bunny?logo=visual-studio-code&color=blue" alt="downloads"/>
@@ -75,13 +75,15 @@ There are times when you want to do something with a workspace file outside of V
 
 You may want to perform some action on a group of files, so it's probably easier to open that folder in your system file manager and do it there. You can use the `File Bunny: Open Workspace Folder Externally` command, or the `File Bunny: Open Folder Externally` command to open a specific folder.
 
-You may want to edit a file in an app specific to that file type. I often want to edit SVG images in my default editor (Inkscape). You can use the `File Bunny: Open File in External App` command to do this.
+You may want to edit a file in an app specific to that file type. For example, I often want to edit SVG files in *Inkscape*, my preferred vector graphics editor. You can use the `File Bunny: Open File in External App` command to do this.
 
 ## Commands
 
 The following commands can be run from the Command Palette (`Ctrl+Shift+P`). They are categorised below:
 
-### File actions
+### File Actions
+
+These commands are scoped to the active workspace.
 
 1. `File Bunny: Open File`: Choose a file to open from the current workspace.
 1. `File Bunny: Open File to the Right`: Choose a file to open from the current workspace, and split it to the right of the active editor.
@@ -99,22 +101,24 @@ The following commands can be run from the Command Palette (`Ctrl+Shift+P`). The
 1. `File Bunny: Open Active File in External Default App`: Open the active file in the system default app.
 1. `File Bunny: Move Active File`: Move the active file to another location in the current workspace.
 1. `File Bunny: Duplicate Active File`: Copy the active file and place it somewhere in the current workspace.
-1. `File Bunny: Rename Active File`
+1. `File Bunny: Rename Active File`: Change the name of the active file.
 1. `File Bunny: Delete Active File`: Delete the active file. The file is put into the trash (recycle bin).
 
 ### Folder actions
 
+These commands are scoped to the active workspace.
+
 1. `File Bunny: Open Folder`: Choose a folder to open as the workspace.
-1. `File Bunny: Open Workspace Folder in External Default App`: Open the current workspace folder in the Operating Systems' file explorer.
-1. `File Bunny: Open Folder in External Default App`: Open a folder from the current workspace in the Operating Systems' file explorer.
+1. `File Bunny: Open Workspace Folder in External Default App`: Open the current workspace folder in the system file explorer.
+1. `File Bunny: Open Folder in External Default App`: Open a folder from the current workspace in the system file explorer.
 1. `File Bunny: Create New Folder`: Create a new folder in the current workspace.
 1. `File Bunny: Duplicate Folder`: Duplicate a folder from the current workspace, and place it somewhere in the current workspace.
 1. `File Bunny: Delete Folder`: Delete a folder from the current workspace.
 
 ### Quick navigation
 
-1. `File Bunny: Go to Top of Active File`
-1. `File Bunny: Go to End of Active File`
+1. `File Bunny: Go to Top of Active File`: Takes you to the first line of a file.
+1. `File Bunny: Go to End of Active File`: Takes you to the last line of a file.
 
 ### Quick metadata
 
@@ -125,7 +129,7 @@ The following commands can be run from the Command Palette (`Ctrl+Shift+P`). The
 ## Settings
 
 - `Filebunny: Excludes`: Configure glob patterns for excluding files and folders from file lists for commands. By default, the *.git* and *node_modules* folders are ignored in your workspace.
-- `Filebunny: Starting Location Open Folder`: The initial location shown in the QuickPick when you run the command `File Bunny: Open Folder`. If this field is empty or the path is invalid, it will default to the system home directory.  ![New command](/img/new.png)
+- `Filebunny: Starting Location Open Folder`: The initial location shown in the QuickPick when you run the command `File Bunny: Open Folder`. If this field is empty or the path is invalid, it will default to the system home directory.
 
 ## Keybindings
 

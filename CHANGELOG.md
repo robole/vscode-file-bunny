@@ -5,15 +5,28 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2023-12-12
+
+## Changed
+
+- Upgraded **minimum version of VS Code to support extension to 1.84** i.e. the `engines` field in `package.json`. I want to avail of the most recent API to improve the extension.
+- Change the commands: `File Bunny: Open Active File in External Default App`, `File Bunny: Move Active File`, `File Bunny: Rename Active File`, `File Bunny: Duplicate Active File`, `File Bunny: Delete Active File`, and `File Bunny: Copy File Name` to be able to operate on any type of file. It was limited to text files. Uses the [`Tabgroup`](https://code.visualstudio.com/api/references/vscode-api#TabGroup) and [`Tab`](https://code.visualstudio.com/api/references/vscode-api#Tab) interfaces.
+- Changed `File Bunny: Delete File` to delete the file and not close any open tabs related to that deleted file.
+- Organised functions in *fileAction.js* to correspond with README for easier cross-referencing. Added region comments to each major section.
+
+## Removed
+
+- Removed "new" image label from `Filebunny: Starting Location Open Folder` in README.
+
 ## [1.10.2] - 2023-12-12
 
-## Fixed
+### Fixed
 
 - Fixed spacing in lists in README that affected layout.
 
 ## [1.10.1] - 2023-12-12
 
-## Fixed
+### Fixed
 
 - Fixed typo in README in commands section. Accidentally deleted `File Bunny: Open File` title from list! Doh!
 

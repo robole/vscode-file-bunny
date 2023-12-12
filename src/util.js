@@ -11,16 +11,34 @@ function hasActiveTextEditor() {
   return !(vscode.window.activeTextEditor === undefined);
 }
 
-async function closeTextEditor(filepath) {
+function hasActiveTab() {
+  return !(vscode.window.tabGroups.activeTabGroup.activeTab === undefined);
+}
+
+function getActiveTabUri() {
+  let uri;
+
+  const { activeTab } = vscode.window.tabGroups.activeTabGroup;
+
+  if (activeTab.input) {
+    uri = activeTab.input.uri;
+  }
+
+  return uri;
+}
+
+async function closeTab(uri) {
   const tabs = vscode.window.tabGroups.all.map((tg) => tg.tabs).flat();
-  const index = tabs.findIndex(
-    (tab) =>
-      tab.input instanceof vscode.TabInputText &&
-      tab.input.uri.path === filepath.path
-  );
+
+  const index = tabs.findIndex((tab) => tab.input.uri.path === uri.path);
+
   if (index !== -1) {
     await vscode.window.tabGroups.close(tabs[index]);
   }
+}
+
+async function switchFocusNextTab() {
+  await vscode.commands.executeCommand("workbench.action.nextEditorInGroup");
 }
 
 function isRootFolder(p) {
@@ -105,8 +123,11 @@ function createUniqueFileName(fileName, index) {
 module.exports = {
   isWorkspaceOpen,
   isRootFolder,
-  closeTextEditor,
+  closeTab,
   hasActiveTextEditor,
+  hasActiveTab,
+  getActiveTabUri,
+  switchFocusNextTab,
   enableKeyBindings,
   disableKeyBindings,
   escapePath,

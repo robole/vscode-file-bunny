@@ -24,15 +24,26 @@ class DuplicateActiveFilePicker extends MultiStepPicker {
 
     super(steps);
 
-    this.fileName = nodePath.basename(
-      vscode.window.activeTextEditor.document.fileName
-    );
-
-    this.steps[1].value = this.fileName;
-
-    if (util.isWorkspaceOpen()) {
+    if (util.isWorkspaceOpen() === false) {
+      this.close();
+      throw new Error(
+        "You cannot duplicate a file if there is no open workspace."
+      );
+    } else {
       this.rootFolder = vscode.workspace.workspaceFolders[0].uri.fsPath;
     }
+
+    if (util.hasActiveTab()) {
+      this.activeFileUri = util.getActiveTabUri();
+      if (this.activeFileUri) {
+        this.filename = nodePath.basename(this.activeFileUri.fsPath);
+      }
+    } else {
+      this.close();
+      throw new Error("There is no active file");
+    }
+
+    this.steps[1].value = this.filename;
 
     let disposable1 = this.picker.onDidChangeValue(
       this.onDidChangeValue.bind(this)
@@ -41,15 +52,7 @@ class DuplicateActiveFilePicker extends MultiStepPicker {
   }
 
   async run() {
-    if (vscode.window.activeTextEditor === undefined) {
-      return;
-    }
-
-    if (this.rootFolder === undefined) {
-      vscode.window.showWarningMessage(
-        "You cannot duplicate a file if a workspace is not open."
-      );
-      this.close();
+    if (util.isWorkspaceOpen() === false || util.isWorkspaceOpen() === false) {
       return;
     }
 
@@ -86,8 +89,8 @@ class DuplicateActiveFilePicker extends MultiStepPicker {
 
       this.currentStepNum = 2;
       this.steps[1].title = `Duplicate Active File - name - '${
-        this.fileName
-      }' to '${nodePath.join(selection, this.fileName)}'`;
+        this.filename
+      }' to '${nodePath.join(selection, this.filename)}'`;
       this.setCurrentStep(this.steps[1]);
     } else if (this.currentStepNum === 2) {
       this.steps[1].value = currentValue;
@@ -122,7 +125,7 @@ class DuplicateActiveFilePicker extends MultiStepPicker {
   }
 
   setTitle(filepath) {
-    this.picker.title = `Duplicate Active File - name - '${this.fileName}' to '${filepath}'`;
+    this.picker.title = `Duplicate Active File - name - '${this.filename}' to '${filepath}'`;
   }
 
   async duplicateFile() {
@@ -131,14 +134,14 @@ class DuplicateActiveFilePicker extends MultiStepPicker {
       this.steps[0].value,
       this.steps[1].value
     );
-    let activeDocUri = vscode.window.activeTextEditor.document.uri;
+
     let newUri = vscode.Uri.file(absoluteFilepath);
 
     try {
       let exists = await fileSystem.exists(newUri);
 
       if (exists === false) {
-        await vscode.workspace.fs.copy(activeDocUri, newUri, {
+        await vscode.workspace.fs.copy(this.activeFileUri, newUri, {
           overwrite: false,
         });
         await vscode.commands.executeCommand("vscode.open", newUri);
