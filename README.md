@@ -83,8 +83,8 @@ The following commands can be run from the Command Palette (`Ctrl+Shift+P`). The
 
 ### File actions
 
-1.`File Bunny: Open File`: Choose a file to open from the current workspace.
-1.`File Bunny: Open File to the Right`: Choose a file to open from the current workspace, and split it to the right of the active editor.
+1. `File Bunny: Open File`: Choose a file to open from the current workspace.
+1. `File Bunny: Open File to the Right`: Choose a file to open from the current workspace, and split it to the right of the active editor.
 1. `File Bunny: Open File to the Left`: Choose a file to open from the current workspace, and split it to the left of the active editor.
 1. `File Bunny: Open File Above`: Choose a file to open from the current workspace, and split it above the active editor.
 1. `File Bunny: Open File Below`: Choose a file to open from the current workspace, and split it below the active editor.
