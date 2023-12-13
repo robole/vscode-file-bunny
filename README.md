@@ -29,7 +29,7 @@ For some file actions, we can consolidate the list of files into a single list f
 
 Take the command, `File Bunny: Move Active File`. A QuickPick dialog lets you choose a destination from all folders (and subfolders) in your workspace.
 
-![move active file demo](img/move-file.gif)
+![Demo of the move active file command. The user moves README.md from src to workspace root in a quick move](img/screencast/move-active-file.webp)
 
 The list is narrowed down to matched selections as you type, the same as with commands in the Command Palette.
 
@@ -39,17 +39,19 @@ You can exclude folders from the list with the `excludes` settings option to kee
 
 Incremental completion builds a filepath quickly. This is achieved through a QuickPick dialog populated with a file list, and tabbed autocompletion to append each segment.
 
-Take the command, `File Bunny: Open a Folder`.
+Take the command, `File Bunny: Open a Folder`. I want to open my *Beer Advisor* Android project, which I know resides in `/home/rob/programming/Workspace/Android/beer-advisor`.
 
-![open folder demo](img/open-folder.gif)
+![Demo of the open folder command. ](img/screencast/open-folder.webp)
 
-In this example, I do the following to open my *Beer Advisor* project:
+The command opens a dialog by default at `home/rob/programming/Workspace` and I can find the project from there. To find the folder, I type the following:
 
-1. Type "and", which highlights  the *Android* folder as the first option. Press `Tab` to select it.
-2. Type "beer", which highlights the *beer-advisor* folder as the first option. Press `Tab` to select it.
+1. Type "and", which highlights the *Android* folder as the first option. Press `Tab` to select it.
+2. Type "bee", which highlights the *beer-advisor* folder as the first option. Press `Tab` to select it.
 3. Accept the current directory (first option) by pressing `Enter` to open it.
 
-This process of building paths is quick and mitigates errors drastically. You cannot create an incorrect path.
+This process of building paths is quick and far less error-prone than editing a string of the complete filepath. You cannot create an incorrect path.
+
+You can set the default location through the `Filebunny: Starting Location Open Folder` setting.
 
 You can also walk the file system with the arrow keys. Use the left arrow to go back, and right arrow to go forward through the file system if you need to search.
 
@@ -57,7 +59,7 @@ You can also walk the file system with the arrow keys. Use the left arrow to go 
 
 Quite often, you want to do something to a file you're already working on. Why re-find the file in the sidebar to perform an action?
 
-![delete active file demo](img/delete-file.gif)
+![Demo of the delete active file command. Running the command while the unwanted.md file is active deletes the file immediately. The tab is closed and you see the file removed from the explorer file tree.](img/screencast/delete-active-file.webp)
 
 For example, the command  `File Bunny: Delete Active File` will immediately delete the active file (it ends up in the trash).
 
@@ -73,9 +75,9 @@ If you perform a file action such as moving a file, overwriting another file is 
 
 There are times when you want to do something with a workspace file outside of VS Code.
 
-You may want to perform some action on a group of files, so it's probably easier to open that folder in your system file manager and do it there. You can use the `File Bunny: Open Workspace Folder Externally` command, or the `File Bunny: Open Folder Externally` command to open a specific folder.
+You may want to perform some action on a group of files, so it's probably easier to open that folder in your system file manager and do it there. You can use the `File Bunny: Open Workspace Folder in External Default App` command, or the `File Bunny: Open Folder in External Default App` command to open a specific folder.
 
-You may want to edit a file in an app specific to that file type. For example, I often want to edit SVG files in *Inkscape*, my preferred vector graphics editor. You can use the `File Bunny: Open File in External App` command to do this.
+You may want to edit a file in an app specific to that file type. For example, I often want to edit SVG files in *Inkscape*, my preferred vector graphics editor. You can use the `File Bunny: Open Active File in External Default App` and `File Bunny: Open File in External Default App` commands to do this.
 
 ## Commands
 
@@ -148,12 +150,6 @@ You can also check out my article, [VS Code keyboard-fu: custom keyboard shortcu
 
 The extension is loaded once VS Code has fully loaded. To be more specific, it is triggered by the `onStartupFinished` [activation event](https://code.visualstudio.com/api/references/activation-events).
 
-## Installation
-
-1. The extension is listed in the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=robole.file-bunny) and [Open VSX Marketplace](https://open-vsx.org/extension/robole/file-bunny) where you can download or install it directly.
-1. Inside VS Code: Type `Ctrl+P`, write `ext install robole.file-bunny` in the text field, and hit `Enter`.
-1. From the Command-line: Run the command `code --install-extension robole.file-bunny`.
-
 ## Contribute
 
 If you have a suggestion or find a bug, please file an issue.
@@ -179,11 +175,7 @@ Thank you! 🙏
 
 No. I don't use multi-root workspaces, so I have not implemented this feature. If you are interested in this feature, feel free to open an issue and mark it as an "enhancement". If there is enough interest, I will consider implementing it. The current behaviour for a multi-root workspace is that you will only be able to perform actions on the first folder of the workspace.
 
-### 2) Why can't I delete an image and some non-code files with the command `File Bunny: Delete Active File` ?
-
-This is a current limitation of VS Code. When you open an image in VS Code, the tab cannot be referenced through the Extensions API. There is an [open issue in the VS Code repo](https://github.com/microsoft/vscode/issues/15178) to change this. I have [an issue for this](https://github.com/robole/vscode-file-bunny/issues/4) and will change if/when Microsoft add this feature.
-
-### 3) When I run the command `File Bunny: Open Folder` on Windows, I see extra folders at *C:*. What's the deal with that?
+### 2) When I run the command `File Bunny: Open Folder` on Windows, I see extra folders at *C:*. What's the deal with that?
 
 ![Hidden system folders at C: that appear when browsing file system for command Open Folder](img/windows-c-drive-system-folders.png)
 
