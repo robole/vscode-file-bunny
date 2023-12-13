@@ -12,6 +12,8 @@
 ## Further ideas
 
 1. `File Bunny: Copy Active File as Encoded Data URI` : Similar to https://yoksel.github.io/url-encoder/ . Copy the content of the file as an encoded [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme). This is helpful when you want to use a SVG in CSS.  See [StackOverflow Q](https://stackoverflow.com/questions/19255296/is-there-a-way-to-use-svg-as-content-in-a-pseudo-element-before-or-after).
+1. Open link, similar to:
+https://marketplace.visualstudio.com/items?itemName=Fr43nk.seito-openfile ?
 1. Use different fuzzy search algo?
 1. broot-like commands available on files. Could use `Terminal.sendText`? See <https://code.visualstudio.com/api/references/vscode-api#Terminal>
 1. Navigate to your home folder by typing ~ into the search box, or step up to the parent folder by typing ..

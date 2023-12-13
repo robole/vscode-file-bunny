@@ -7,7 +7,7 @@
   },
   "description": "Perform file actions quickly with keyboard-driven file selection. 🐰⌨️",
   "icon": "img/logo.png",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "engines": {
     "vscode": "^1.84.0",
     "node": ">=12"
