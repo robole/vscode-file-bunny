@@ -83,9 +83,7 @@ You may want to edit a file in an app specific to that file type. For example, I
 
 The following commands can be run from the Command Palette (`Ctrl+Shift+P`). They are categorised below:
 
-### File Actions
-
-These commands are scoped to the active workspace.
+### File actions on the current workspace
 
 1. `File Bunny: Open File`: Choose a file to open from the current workspace.
 1. `File Bunny: Open File to the Right`: Choose a file to open from the current workspace, and split it to the right of the active editor.
@@ -98,7 +96,7 @@ These commands are scoped to the active workspace.
 1. `File Bunny: Duplicate File`: Choose a file to duplicate to another location in the current workspace.
 1. `File Bunny: Delete File`: Choose a file to delete from the current workspace. The file is put into the trash (recycle bin).
 
-### File actions on active file
+### File actions on the active file
 
 1. `File Bunny: Open Active File in External Default App`: Open the active file in the system default app.
 1. `File Bunny: Move Active File`: Move the active file to another location in the current workspace.
@@ -108,9 +106,10 @@ These commands are scoped to the active workspace.
 
 ### Folder actions
 
-These commands are scoped to the active workspace.
-
 1. `File Bunny: Open Folder`: Choose a folder to open as the workspace.
+
+### Folder actions on the current workspace
+
 1. `File Bunny: Open Workspace Folder in External Default App`: Open the current workspace folder in the system file explorer.
 1. `File Bunny: Open Folder in External Default App`: Open a folder from the current workspace in the system file explorer.
 1. `File Bunny: Create New Folder`: Create a new folder in the current workspace.
