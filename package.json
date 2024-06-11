@@ -7,7 +7,7 @@
   },
   "description": "Perform file actions quickly with keyboard-driven file selection. 🐰⌨️",
   "icon": "img/logo.png",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "engines": {
     "vscode": "^1.84.0",
     "node": ">=12"
@@ -196,6 +196,11 @@
         "command": "filebunny.createFolder",
         "category": "File Bunny",
         "title": "Create New Folder"
+      },
+      {
+        "command": "filebunny.moveFolder",
+        "category": "File Bunny",
+        "title": "Move Folder"
       },
       {
         "command": "filebunny.duplicateFolder",

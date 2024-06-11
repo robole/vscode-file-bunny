@@ -5,6 +5,16 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.0] - 2024-06-11
+
+### Added
+
+- Added `File Bunny: Move Folder` command.
+
+### Changed
+
+- Added another subheading level to the "Commands" section in the README. A level 2 section for "File Actions" and "Folder Actions".
+
 ## [2.3.0] - 2024-06-06
 
 ### Changed

@@ -168,27 +168,34 @@ function activate(context) {
   );
 
   let disposable24 = vscode.commands.registerCommand(
+    "filebunny.moveFolder",
+    async () => {
+      await folderAction.moveFolder();
+    }
+  );
+
+  let disposable25 = vscode.commands.registerCommand(
     "filebunny.duplicateFolder",
     async () => {
       await folderAction.duplicateFolder();
     }
   );
 
-  let disposable25 = vscode.commands.registerCommand(
+  let disposable26 = vscode.commands.registerCommand(
     "filebunny.deleteFolder",
     async () => {
       await folderAction.deleteFolder();
     }
   );
 
-  let disposable26 = vscode.commands.registerCommand(
+  let disposable27 = vscode.commands.registerCommand(
     "filebunny.openFileExternal",
     async () => {
       await fileAction.openFileExternal();
     }
   );
 
-  let disposable27 = vscode.commands.registerCommand(
+  let disposable28 = vscode.commands.registerCommand(
     "filebunny.openFolderExternal",
     async () => {
       await folderAction.openFolderExternal();
@@ -223,6 +230,7 @@ function activate(context) {
     disposable25,
     disposable26,
     disposable27,
+    disposable28,
   ];
 }
 

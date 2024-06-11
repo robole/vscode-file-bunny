@@ -8,6 +8,7 @@ const Browser = require("./browser");
 const globPicker = require("./globPicker");
 const NewFolderPicker = require("./newFolderPicker");
 const DuplicateFolderPicker = require("./duplicateFolderPicker");
+const MoveFolderPicker = require("./moveFolderPicker");
 const fileSystem = require("./fileSystem");
 
 async function openRecentFolder() {
@@ -70,6 +71,18 @@ async function createFolder() {
   }
 
   let picker = new NewFolderPicker();
+  await picker.run();
+}
+
+async function moveFolder() {
+  if (util.isWorkspaceOpen() === false) {
+    vscode.window.showWarningMessage(
+      "Cannot move a folder. There is no workspace open."
+    );
+    return;
+  }
+
+  let picker = new MoveFolderPicker();
   await picker.run();
 }
 
@@ -177,6 +190,7 @@ module.exports = {
   openRecentFolder,
   openFolder,
   createFolder,
+  moveFolder,
   duplicateFolder,
   deleteFolder,
   openWorkspaceFolderExternal,
