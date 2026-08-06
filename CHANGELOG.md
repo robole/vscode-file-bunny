@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.2] - 2026-08-05
+
+### Fixed
+
+- Update PAT secret for GitHub Action to publish to VS Code Marketplace.
+
 ## [2.4.1] - 2026-08-05
 
 ### Fixed
