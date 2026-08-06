@@ -9,18 +9,6 @@
 </h1>
 <h4 align="center">Perform file actions quickly with keyboard-driven file selection. 🐰⌨️</h4>
 
-<p align="center">
-<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=made%20for&message=VS%20Code&color=blue" alt="Made for VSCode">
-<img src="https://img.shields.io/visual-studio-marketplace/v/robole.file-bunny?logo=visual-studio-code&color=blue" alt="Visual Studio Marketplace Version">
-<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=61KB&color=blue"
-alt="Extension file size in bytes">
-<img src="https://img.shields.io/visual-studio-marketplace/r/robole.file-bunny?logo=visual-studio-code&color=blue" alt="Visual Studio Marketplace Rating">
-<img src="https://img.shields.io/visual-studio-marketplace/d/robole.file-bunny?logo=visual-studio-code&color=blue" alt="downloads"/>
-<img src="https://img.shields.io/visual-studio-marketplace/i/robole.file-bunny?logo=visual-studio-code&color=blue" alt="installs"/>
-<img src="https://img.shields.io/static/v1?label=built%20with&message=carrot%20juice%20%26%20javascript&color=blue" alt="Built with carrot juice and javascript"/>
-<a href="https://ko-fi.com/roboleary"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-$4-yellow?logo=buy-me-a-coffee&label=Buy%20me%20a%20coffee&color=ffc300" alt="Buy me a coffee"></a>
-</p>
-
 No need to *hop* to the Sidebar to work with files. 😜
 
 ## Consolidated lists for quick file selection
@@ -143,9 +131,9 @@ There are 2 contexts for the folder actions: system (any folder anywhere) and cu
 
 For multi-step commands such as `File Bunny: Create New File`, there are keybindings for the *next* and *previous* commands that enable you to go back and forth between steps. These keybindings are only active when you run a multi-step command.
 
-| Keybinding  | Command Name   | Description | When Clause |
-|-------------- | -------------- |-------------- |-------------- |
-| `➞` (right arrow key) <br/>, or `Tab` for `File Bunny: Open Folder`  | `filebunny.next`    | Skip to next step of a multi-step command | `inFileBunny` |
+| Keybinding | Command Name | Description | When Clause |
+| -------------- | -------------- | -------------- | -------------- |
+| `➞` (right arrow key) <br/>, or `Tab` for `File Bunny: Open Folder` | `filebunny.next` | Skip to next step of a multi-step command | `inFileBunny` |
 | `🠔` (left arrow key) | `filebunny.back` | Go back to previous step of a multi-step command | `inFileBunny` |
 
 If you want to modify these keybindings, you can read the [Key Bindings for Visual Studio Code guide](https://code.visualstudio.com/docs/getstarted/keybindings) to learn how.
@@ -160,18 +148,16 @@ The extension is loaded once VS Code has fully loaded. To be more specific, it i
 
 If you have a suggestion or find a bug, please file an issue.
 
-If you want to contribute to the development, please discuss it with me first! I do not know when I would have time to perform a code review!
+If you want to contribute to the development of the extension, please discuss it with me first! I do not know when I would have time to perform a code review!
 
 ## Appreciate
 
 You can show your appreciation by:
 1. [Buying me a coffee or sponsoring me](https://ko-fi.com/roboleary)
-1. Leaving a positive review in the [visual studio marketplace](<https://marketplace.visualstudio.com/items?itemName=robole.file-bunny&ssr=false#review-details>).
+1. Leaving a positive review in the [visual studio marketplace](https://marketplace.visualstudio.com/items?itemName=robole.file-bunny&ssr=false#review-details).
 1. Starring the repo 🌟.
 
-This will **help other people find the extension**.
-
-It will **offer me encouragement** to continue, and can provide **a path to dedicating more time to open-source** in the future.
+This will **help other people find the extension**. It will **offer me encouragement** to continue, and can provide **a path to dedicating more time to open-source** in the future.
 
 Thank you! 🙏
 
