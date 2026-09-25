@@ -264,6 +264,11 @@
           "type": "string",
           "default": "",
           "description": "The initial location shown in the QuickPick when you run the command 'File Bunny: Open Folder'. If this field is empty or the path is invalid, it will default to the system home directory."
+        },
+        "filebunny.useTrash": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether deleted files and folders should be moved to the trash. Set to false if your filesystem provider does not support trash (e.g. WSL, Remote SSH, Containers)."
         }
       }
     }

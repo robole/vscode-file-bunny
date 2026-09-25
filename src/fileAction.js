@@ -191,7 +191,7 @@ async function deleteFile() {
     );
 
     try {
-      await vscode.workspace.fs.delete(selectedFileUri, { useTrash: true });
+      await fileSystem.remove(selectedFileUri);
     } catch (error) {
       vscode.window.showErrorMessage(
         `Could not delete file: ${selectedFileUri.path}. ${error}`
@@ -330,9 +330,11 @@ async function deleteActiveFile() {
   let uri = util.getActiveTabUri();
 
   try {
-    await vscode.workspace.fs.delete(uri, { useTrash: true });
-    await util.closeTab(uri);
-    await util.switchFocusNextTab();
+    let deleted = await fileSystem.remove(uri);
+    if (deleted) {
+      await util.closeTab(uri);
+      await util.switchFocusNextTab();
+    }
   } catch (error) {
     vscode.window.showErrorMessage(
       `Could not delete file: ${uri.fsPath}. ${error.message}.`

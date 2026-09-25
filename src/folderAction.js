@@ -112,10 +112,13 @@ async function deleteFolder() {
     if (selectedFolder !== undefined) {
       let newUri = vscode.Uri.file(selectedFolder.path);
 
-      await vscode.workspace.fs.delete(newUri, {
-        recursive: true,
-        useTrash: true,
-      });
+      try {
+        await fileSystem.remove(newUri, { recursive: true });
+      } catch (error) {
+        vscode.window.showErrorMessage(
+          `Could not delete folder: ${newUri.fsPath}. ${error.message || error}`
+        );
+      }
     }
   }
 }
