@@ -29,9 +29,21 @@ function getTemplateDefaultFolder() {
   return config.get("templateDefaultFolder");
 }
 
+function getUseTrash() {
+  let config = vscode.workspace.getConfiguration(configName);
+  return config.get("useTrash");
+}
+
+async function setUseTrash(value) {
+  let config = vscode.workspace.getConfiguration(configName);
+  await config.update("useTrash", value, vscode.ConfigurationTarget.Global);
+}
+
 module.exports = {
   getExcludes,
   getAbsoluteExcludes,
   getStartingLocationOpenFolder,
   getTemplateDefaultFolder,
+  getUseTrash,
+  setUseTrash,
 };
